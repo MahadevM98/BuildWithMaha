@@ -21,9 +21,9 @@
             --border-color: #eaeaea;
             --card-bg: #fafafa;
             
-            /* Psychology-Backed Conversion Colors */
-            --trust-blue: #007AFF; /* High-trust, authoritative blue */
-            --trust-blue-hover: #005CE6;
+            /* High-Conversion Electric Blue (Sampled from your asset) */
+            --trust-blue: #1A9CFF; 
+            --trust-blue-hover: #0080FF;
             
             --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             --font-logo: 'Dancing Script', cursive;
@@ -128,7 +128,7 @@
             justify-content: center;
             padding: 0.875rem 1.75rem;
             font-size: 1rem;
-            font-weight: 600; /* Slightly bolder for blue contrast */
+            font-weight: 600;
             border-radius: 8px;
             transition: var(--transition);
             cursor: pointer;
@@ -143,7 +143,7 @@
         .btn-primary:hover {
             background-color: var(--trust-blue-hover);
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 122, 255, 0.25); /* Blue tinted shadow */
+            box-shadow: 0 8px 20px rgba(26, 156, 255, 0.3);
         }
 
         .btn-secondary {
@@ -186,7 +186,6 @@
             align-items: center;
         }
 
-        /* Custom Script Logo Styling */
         .logo {
             font-family: var(--font-logo);
             font-size: 2.2rem;
@@ -237,13 +236,12 @@
             overflow: hidden;
         }
 
-        /* Subtle animated background element */
         .hero::before {
             content: '';
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 122, 255, 0.04) 0%, rgba(255,255,255,0) 70%); /* Slight blue tint */
+            background: radial-gradient(circle, rgba(26, 156, 255, 0.05) 0%, rgba(255,255,255,0) 70%);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -337,7 +335,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
-            color: var(--trust-blue); /* Updated to trust blue */
+            color: var(--trust-blue);
         }
 
         .service-card h3 {
@@ -351,22 +349,91 @@
         }
 
         /* ==========================================================================
-           ABOUT SECTION (Pure Text & Animation)
+           ABOUT SECTION (Premium Image & Profile Layout)
            ========================================================================== */
         .about-section {
             background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .about-content-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
+        .about-grid-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1.5fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .about-content-wrapper h2 {
-            margin-bottom: 3rem;
+        .about-profile-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .about-text-blocks p {
+        /* Profile Image Framing */
+        .profile-image-wrapper {
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 1 / 1;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            background-color: #eaeaea;
+        }
+
+        .profile-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .profile-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--trust-blue);
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .profile-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            max-width: 420px;
+        }
+
+        .meta-list-item {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .meta-list-item strong {
+            color: var(--trust-blue);
+            font-weight: 600;
+        }
+
+        .about-manifesto h2 {
+            margin-bottom: 2rem;
+        }
+
+        .about-manifesto p {
             font-size: 1.35rem;
             line-height: 1.7;
             color: var(--text-primary);
@@ -374,9 +441,10 @@
             font-weight: 400;
         }
 
-        .about-text-blocks p:last-child {
+        .about-manifesto p.secondary-text {
             color: var(--text-secondary);
             font-size: 1.15rem;
+            margin-bottom: 0;
         }
 
         /* ==========================================================================
@@ -478,20 +546,11 @@
             gap: 2rem;
         }
 
-        /* Footer Custom Script Logo */
         .footer-logo {
             font-family: var(--font-logo);
             font-size: 2rem;
             font-weight: 700;
             color: var(--trust-blue);
-        }
-
-        .footer-logo span {
-            font-family: var(--font-main);
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            margin-left: 0.5rem;
         }
 
         .footer-links {
@@ -513,7 +572,19 @@
            MOBILE RESPONSIVENESS
            ========================================================================== */
         @media (max-width: 992px) {
-            .about-text-blocks p {
+            .about-grid-layout {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+            .about-profile-container {
+                align-items: center;
+                text-align: center;
+            }
+            .meta-list {
+                width: 100%;
+                text-align: left;
+            }
+            .about-manifesto p {
                 font-size: 1.15rem;
             }
         }
@@ -684,17 +755,39 @@
     </section>
 
     <section id="about" class="section-padding about-section">
-        <div class="container text-center">
-            <div class="about-content-wrapper">
-                <h2 class="reveal">Engineering growth through data, not guesswork.</h2>
-                <div class="about-text-blocks">
-                    <p class="reveal" style="transition-delay: 0.15s;">
-                        I approach business growth as an engineer approaches a complex system. For the past 6+ years, I have partnered with businesses to strip away fluff marketing and replace vanity metrics with actual, measurable revenue.
+        <div class="container">
+            <div class="about-grid-layout">
+                
+                <div class="about-profile-container reveal">
+                    <div class="profile-image-wrapper">
+                        <img src="image.png" alt="Maha - Growth Consultant">
+                    </div>
+                    <div>
+                        <span class="profile-label">Consultant Profile</span>
+                        <h2>Maha</h2>
+                        <p class="profile-title">Growth Strategist & Systems Architect</p>
+                        
+                        <div class="meta-list">
+                            <div class="meta-list-item">Execution: <strong>6+ Years Active</strong></div>
+                            <div class="meta-list-item">Philosophy: <strong>Systems Over Vanity</strong></div>
+                            <div class="meta-list-item">Focus: <strong>Unit Economics & ROI</strong></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-manifesto">
+                    <h2 class="reveal">Engineering growth through data, not guesswork.</h2>
+                    <p class="reveal" style="transition-delay: 0.1s;">
+                        I approach business growth as an engineer approaches a complex distribution system. I don't treat digital marketing as a creative experiment; I treat it as data infrastructure designed to predict and capture market demand.
                     </p>
-                    <p class="reveal" style="transition-delay: 0.3s;">
-                        I am not a generic freelancer looking for quick gigs. I operate as a strategic growth partner. I only take on projects where I have high conviction that realistic results can be achieved based on solid unit economics and market positioning.
+                    <p class="reveal" style="transition-delay: 0.2s;">
+                        Over the past 6+ years, I have partnered with businesses to systematically strip away fluff tactics, misaligned metrics, and wasteful ad spend. My objective is simple: construct high-performance conversion funnels and customer acquisition loops that predictably impact your net revenue.
+                    </p>
+                    <p class="secondary-text reveal" style="transition-delay: 0.3s;">
+                        I operate explicitly as a strategic growth partner, not a task-taker. Because I value absolute accountability, I exclusively accept projects where market positioning and margins reveal a realistic, clear path to scalable execution.
                     </p>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -774,7 +867,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close mobile menu when a link is clicked
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -816,7 +908,6 @@
             revealOnScroll.observe(el);
         });
         
-        // Trigger initial check for elements already in view on load
         setTimeout(() => {
             revealElements.forEach(el => {
                 const rect = el.getBoundingClientRect();
