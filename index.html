@@ -1,907 +1,542 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuildWithMaha | Digital Growth Consultancy</title>
-    <meta name="description" content="Premium digital growth consultancy focused on performance, authority, and scalable business growth.">
+    <title>BuildWithMaha | Performance Marketing & Lead Generation</title>
+    <meta name="description" content="Performance marketing and lead generation systems focused on real business results. Deployed by BuildWithMaha.">
     
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        premiumDark: '#0f172a',
+                        premiumGray: '#f8fafc',
+                        premiumBorder: '#e2e8f0',
+                        premiumMuted: '#475569',
+                        brandBlue: '#0091ff',
+                    }
+                }
+            }
+        }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* ==========================================================================
-           CSS VARIABLES & RESET
-           ========================================================================== */
-        :root {
-            --bg-color: #ffffff;
-            --text-primary: #111111;
-            --text-secondary: #555555;
-            --border-color: #eaeaea;
-            --card-bg: #fafafa;
-            
-            /* High-Conversion Electric Blue (Sampled directly from your logo asset) */
-            --trust-blue: #1A9CFF; 
-            --trust-blue-hover: #0080FF;
-            
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            --container-width: 1200px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #0f172a;
             -webkit-font-smoothing: antialiased;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-
-        /* ==========================================================================
-           TYPOGRAPHY & UTILITIES
-           ========================================================================== */
-        h1 {
-            font-size: clamp(2.5rem, 4.5vw, 4rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
         }
-
-        h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
         }
-
-        h3 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-padding {
-            padding: 7rem 0;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Fluid Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ==========================================================================
-           BUTTONS
-           ========================================================================== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.95rem 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--text-primary);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--trust-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26, 156, 255, 0.25);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border-color: var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--card-bg);
-            transform: translateY(-2px);
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        /* ==========================================================================
-           NAVIGATION (Upgraded to integrate your brand logo asset)
-           ========================================================================== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0,0,0,0.04);
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Wrapper to dynamically scale your uploaded logo file cleanly */
-        .logo-link {
-            display: flex;
-            align-items: center;
-            height: 44px;
-        }
-
-        .logo-img {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--trust-blue);
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            border: none;
-            background: none;
-            color: var(--text-primary);
-        }
-
-        .hamburger svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* ==========================================================================
-           HERO SECTION (Asymmetric Split Screen Architecture)
-           ========================================================================== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 6rem;
-            position: relative;
-            background: radial-gradient(circle at 90% 10%, rgba(26, 156, 255, 0.04) 0%, transparent 60%);
-        }
-
-        .hero-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-content {
-            max-width: 650px;
-        }
-
-        .hero-tagline {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--trust-blue);
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-        }
-
-        /* Top-of-page Premium Portrait Frame */
-        .hero-image-area {
-            display: flex;
-            justify-content: center;
-            position: relative;
-        }
-
-        .hero-image-wrapper {
-            width: 100%;
-            max-width: 440px;
-            aspect-ratio: 1 / 1;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
-            background-color: var(--card-bg);
-        }
-
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .hero-image-wrapper:hover img {
-            transform: scale(1.04);
-        }
-
-        /* ==========================================================================
-           TRUST / STATS STRIP
-           ========================================================================== */
-        .stats-section {
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 3.5rem 0;
-            background: #fff;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.35rem;
-        }
-
-        .stat-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -0.02em;
-        }
-
-        .stat-value span {
-            color: var(--trust-blue);
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* ==========================================================================
-           SERVICES SECTION
-           ========================================================================== */
-        .section-header {
-            max-width: 650px;
-            margin-bottom: 5rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3rem 2.5rem;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            border-color: #d2d2d2;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--card-bg);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            color: var(--trust-blue);
-        }
-
-        .service-card p {
-            font-size: 1.05rem;
-            margin-bottom: 0;
-        }
-
-        /* ==========================================================================
-           ABOUT & PHILOSOPHY (Clean Text Manifesto Layout)
-           ========================================================================== */
-        .about-section {
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .about-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-sticky-label {
-            position: sticky;
-            top: 120px;
-        }
-
-        .about-manifesto p {
-            font-size: 1.4rem;
-            line-height: 1.65;
-            color: var(--text-primary);
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            letter-spacing: -0.01em;
-        }
-
-        .about-manifesto p.secondary-text {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            margin-bottom: 0;
-        }
-
-        /* ==========================================================================
-           PROCESS FRAMEWORK
-           ========================================================================== */
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 3rem;
-        }
-
-        .process-step {
-            position: relative;
-        }
-
-        .step-number {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--trust-blue);
-            margin-bottom: 1.25rem;
-            display: block;
-            letter-spacing: 0.1em;
-        }
-
-        .process-step::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 30px;
-            width: 100%;
-            height: 1px;
-            background: var(--border-color);
-            z-index: -1;
-        }
-        
-        .process-step:last-child::before {
-            display: none;
-        }
-
-        /* ==========================================================================
-           RISK REVERSAL GUARANTEE
-           ========================================================================== */
-        .guarantee-container {
-            padding: 0 2rem;
-        }
-
-        .guarantee-box {
-            background-color: var(--text-primary);
-            color: var(--bg-color);
-            padding: 7rem 4rem;
-            border-radius: 32px;
-            max-width: var(--container-width);
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .guarantee-box h2 {
-            color: #ffffff;
-            max-width: 750px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .guarantee-box p {
-            color: #b0b0b0;
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 1.5rem auto;
-        }
-
-        .disclaimer {
-            font-size: 0.875rem !important;
-            color: #666666 !important;
-            margin-top: 3rem !important;
-        }
-
-        /* ==========================================================================
-           CTA SECTION
-           ========================================================================== */
-        .cta-section {
-            text-align: center;
-            padding: 9rem 0;
-        }
-
-        .cta-section h2 {
-            max-width: 650px;
-            margin: 0 auto 1.5rem auto;
-        }
-
-        /* ==========================================================================
-           FOOTER
-           ========================================================================== */
-        .footer {
-            border-top: 1px solid var(--border-color);
-            padding: 4rem 0;
-            background: var(--bg-color);
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        .footer-logo-link {
-            height: 35px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--trust-blue);
-        }
-
-        /* ==========================================================================
-           MOBILE RESPONSIVENESS
-           ========================================================================== */
-        @media (max-width: 992px) {
-            .hero-layout {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-            .hero-content {
-                max-width: 100%;
-                order: 2; /* Text moves below image on mobile for optimal mobile layout flow */
-            }
-            .hero-image-area {
-                order: 1;
-            }
-            .btn-group {
-                justify-content: center;
-            }
-            .about-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .about-sticky-label {
-                position: relative;
-                top: 0;
-            }
-            .about-manifesto p {
-                font-size: 1.25rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 76px;
-                left: 0;
-                width: 100%;
-                background: var(--bg-color);
-                flex-direction: column;
-                align-items: center;
-                padding: 2.5rem 0;
-                gap: 1.75rem;
-                border-bottom: 1px solid var(--border-color);
-                transform: translateY(-160%);
-                opacity: 0;
-                transition: var(--transition);
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .guarantee-box {
-                padding: 4rem 1.5rem;
-                border-radius: 20px;
-            }
-
-            .process-step::before {
-                display: none;
-            }
-            
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .btn {
-                width: 100%;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden selection:bg-brandBlue selection:text-white">
 
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo-link">
-                <img src="logo-buildwithmaha-df9f92.png" alt="BuildWithMaha Logo" class="logo-img">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-premiumBorder transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            
+            <a href="#" class="flex items-center active:opacity-80 transition-opacity py-1">
+                <img src="logo.png" alt="BuildWithMaha Logo" class="h-8 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('logo-text-fallback').style.display='inline-flex'">
+                <span id="logo-text-fallback" class="hidden text-xl font-extrabold tracking-tight text-premiumDark items-center gap-2">
+                    BuildWithMaha<span class="w-1.5 h-1.5 bg-brandBlue rounded-full inline-block"></span>
+                </span>
             </a>
-            <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#about">Philosophy</a>
-                <a href="#process">Process</a>
-                <a href="#guarantee">Guarantee</a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-premiumMuted">
+                <a href="#about" class="hover:text-premiumDark transition-colors">Experience</a>
+                <a href="#different" class="hover:text-premiumDark transition-colors">The Framework</a>
+                <a href="#services" class="hover:text-premiumDark transition-colors">Services</a>
+                <a href="#performance" class="hover:text-premiumDark transition-colors">Performance Loop</a>
+                <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-4 py-2 text-xs font-semibold tracking-wider text-white bg-neutral-900 hover:bg-neutral-800 rounded transition-all border border-transparent focus:border-brandBlue">Book Audit Call</a>
             </div>
-            <button class="hamburger" aria-label="Toggle Menu">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+
+            <button id="menu-toggle" class="md:hidden text-premiumDark focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-b border-premiumBorder px-6 py-6 flex flex-col gap-4 text-base font-medium shadow-sm transition-all">
+            <a href="#about" class="mobile-link text-premiumMuted hover:text-premiumDark py-1">Experience</a>
+            <a href="#different" class="mobile-link text-premiumMuted hover:text-premiumDark py-1">The Framework</a>
+            <a href="#services" class="mobile-link text-premiumMuted hover:text-premiumDark py-1">Services</a>
+            <a href="#performance" class="mobile-link text-premiumMuted hover:text-premiumDark py-1">Performance Loop</a>
+            <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="mobile-link inline-flex items-center justify-center w-full py-3 text-center text-sm font-semibold text-white bg-neutral-900 rounded mt-2">Book Audit Call</a>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-layout">
-                
-                <div class="hero-content reveal">
-                    <span class="hero-tagline">Maha // Growth Strategist</span>
-                    <h1>Systematized digital growth for serious businesses.</h1>
-                    <p>I build performance-driven marketing blueprints and customer acquisition systems. No aesthetic guesswork. No vanity metrics. Just reliable data infrastructure constructed to scale revenue.</p>
-                    <div class="btn-group">
-                        <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a Strategy Call</a>
-                        <a href="#services" class="btn btn-secondary">Explore Capabilities</a>
-                    </div>
-                </div>
-
-                <div class="hero-image-area reveal" style="transition-delay: 0.1s;">
-                    <div class="hero-image-wrapper">
-                        <img src="image.png" alt="Maha - Growth Consultant Portfolio Portrait">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </header>
-
-    <section class="stats-section">
-        <div class="container reveal">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-value">6+ Years</span>
-                    <span class="stat-label">Active Field Execution</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">Systems <span>&gt;</span> Fluff</span>
-                    <span class="stat-label">Core Operating Metric</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">Direct ROI</span>
-                    <span class="stat-label">Focused Campaign Logic</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-value">Predictable</span>
-                    <span class="stat-label">Acquisition Funnels</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="hero-tagline" style="margin-bottom: 0.5rem;">Core Competencies</span>
-                <h2>Capabilities & Systems Architecture</h2>
-                <p>Comprehensive growth architecture executed with precision. Every element deployed is engineered strictly to optimize your business's unit economics.</p>
+    <section class="relative min-h-screen pt-32 pb-24 md:pt-48 md:pb-36 flex items-center bg-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-neutral-50 border border-premiumBorder rounded-full px-4 py-1.5 text-xs font-medium text-premiumMuted mb-8 tracking-wide" data-aos="fade-down">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span> Available for Q2-Q3 scaling partnerships
             </div>
             
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-premiumDark tracking-tight leading-[1.1] max-w-4xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Performance Marketing & Lead Generation That Focuses on <span class="underline decoration-1 underline-offset-8 decoration-neutral-200">Real Business Results.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-premiumMuted max-w-3xl mx-auto mb-6 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
+                I help businesses generate qualified leads, build high-converting landing pages, and scale using Google Ads, Meta Ads, LinkedIn Ads, and conversion-focused systems.
+            </p>
+
+            <p class="text-sm uppercase tracking-widest text-neutral-400 font-semibold max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="250">
+                No vanity metrics. No bloated retainers. No false promises. Only measurable growth backed by strategy, execution, and accountability.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-neutral-900 hover:bg-neutral-800 text-white font-medium rounded text-sm transition-all tracking-wide shadow-sm hover:shadow-md">
+                    Book a Call
+                </a>
+                <a href="#services" class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 border border-premiumBorder bg-white hover:bg-neutral-50 text-premiumDark font-medium rounded text-sm transition-all tracking-wide hover:border-brandBlue">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 border-t border-premiumBorder bg-premiumGray">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <div class="lg:col-span-5" data-aos="fade-right">
+                    <div class="mb-8 overflow-hidden rounded-lg bg-neutral-200 border border-premiumBorder shadow-sm aspect-[4/5] relative group">
+                        <img src="profile.jpg" alt="Maha - Performance Marketing Specialist" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-102 hover:scale-100" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'; this.classList.add('opacity-40')">
+                        <div class="absolute inset-0 border border-black/5 rounded-lg pointer-events-none"></div>
                     </div>
-                    <h3>Qualified Lead Generation</h3>
-                    <p>Building automated pipelines that cut through the noise to reliably attract, warm, and secure premium high-intent sales prospects.</p>
+                    
+                    <span class="text-xs uppercase font-bold tracking-widest text-neutral-400 block mb-3">Capabilities</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-premiumDark mb-6">Built Through Experience</h2>
+                    <p class="text-premiumMuted leading-relaxed text-base mb-6">
+                        With 6+ years of experience in digital marketing and freelance consulting, I’ve worked on lead generation systems, paid advertising campaigns, landing pages, tracking setups, and conversion-focused strategies for businesses looking for actual growth — not just reports.
+                    </p>
+                    <p class="text-premiumMuted leading-relaxed text-base">
+                        I focus on execution that drives outcomes. I only work with businesses where I genuinely believe I can create results.
+                    </p>
+                </div>
+                
+                <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-left">
+                    <div class="bg-white p-8 border border-premiumBorder rounded shadow-[0_4px_12px_rgba(0,0,0,0.01)] transition-all hover:border-brandBlue group">
+                        <div class="w-10 h-10 rounded bg-neutral-50 flex items-center justify-center mb-4 border border-premiumBorder group-hover:bg-brandBlue/5 transition-colors">
+                            <i data-lucide="users" class="w-5 h-5 text-premiumDark group-hover:text-brandBlue transition-colors"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-premiumDark mb-2">Qualified Leads</h3>
+                        <p class="text-sm text-premiumMuted">Funnels built to attract buyers who have high intent and high budget capacity.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-premiumBorder rounded shadow-[0_4px_12px_rgba(0,0,0,0.01)] transition-all hover:border-brandBlue group">
+                        <div class="w-10 h-10 rounded bg-neutral-50 flex items-center justify-center mb-4 border border-premiumBorder group-hover:bg-brandBlue/5 transition-colors">
+                            <i data-lucide="trending-up" class="w-5 h-5 text-premiumDark group-hover:text-brandBlue transition-colors"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-premiumDark mb-2">Better Conversion Rates</h3>
+                        <p class="text-sm text-premiumMuted">Eliminating systemic friction across your touchpoints to extract maximum conversion optimization.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-premiumBorder rounded shadow-[0_4px_12px_rgba(0,0,0,0.01)] transition-all hover:border-brandBlue group">
+                        <div class="w-10 h-10 rounded bg-neutral-50 flex items-center justify-center mb-4 border border-premiumBorder group-hover:bg-brandBlue/5 transition-colors">
+                            <i data-lucide="layers" class="w-5 h-5 text-premiumDark group-hover:text-brandBlue transition-colors"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-premiumDark mb-2">Scalable Ad Campaigns</h3>
+                        <p class="text-sm text-premiumMuted">Data-backed media buying across multi-channel frameworks without algorithmic breakdown.</p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-premiumBorder rounded shadow-[0_4px_12px_rgba(0,0,0,0.01)] transition-all hover:border-brandBlue group">
+                        <div class="w-10 h-10 rounded bg-neutral-50 flex items-center justify-center mb-4 border border-premiumBorder group-hover:bg-brandBlue/5 transition-colors">
+                            <i data-lucide="monitor" class="w-5 h-5 text-premiumDark group-hover:text-brandBlue transition-colors"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-premiumDark mb-2">High-Performance Landing Pages</h3>
+                        <p class="text-sm text-premiumMuted">Clean, blazing-fast responsive micro-sites layout engineered precisely around buyer psychology.</p>
+                    </div>
                 </div>
 
-                <div class="service-card reveal" style="transition-delay: 0.05s;">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
-                    </div>
-                    <h3>Google & Meta Ads</h3>
-                    <p>Mathematical, algorithmic media buying frameworks deployed to shrink acquisition costs while driving lifetime value margins upward.</p>
-                </div>
+            </div>
 
-                <div class="service-card reveal" style="transition-delay: 0.1s;">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                    </div>
-                    <h3>Website Development</h3>
-                    <p>Writing and coding lightning-fast, secure digital hubs designed around advanced consumer psychology to serve as permanent 24/7 sales tools.</p>
+            <div class="mt-20 pt-12 border-t border-premiumBorder grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" data-aos="fade-up">
+                <div>
+                    <p class="text-4xl md:text-5xl font-extrabold text-premiumDark tracking-tight mb-1">6+</p>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-neutral-400">Years Experience</p>
                 </div>
-
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-                    </div>
-                    <h3>E-Commerce Scaling</h3>
-                    <p>Integrating clear operational backend protocols with creative marketing frameworks to maximize average checkout ticket returns.</p>
+                <div>
+                    <p class="text-4xl md:text-5xl font-extrabold text-premiumDark tracking-tight mb-1">Multi-Channel</p>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-neutral-400">Campaigns Managed</p>
                 </div>
-
-                <div class="service-card reveal" style="transition-delay: 0.05s;">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                    </div>
-                    <h3>Conversion Optimization</h3>
-                    <p>Meticulous heat-mapping and testing infrastructures mapped to milk maximum cash flow conversion from every drop of existing site traffic.</p>
+                <div>
+                    <p class="text-4xl md:text-5xl font-extrabold text-premiumDark tracking-tight mb-1">Conversion</p>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-neutral-400">Focused Systems</p>
                 </div>
-
-                <div class="service-card reveal" style="transition-delay: 0.1s;">
-                    <div class="service-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3>Brand Authority Scaling</h3>
-                    <p>Solidifying undisputed authority profiles across targeted channels to shorten sales interaction resistance timelines entirely.</p>
+                <div>
+                    <p class="text-4xl md:text-5xl font-extrabold text-premiumDark tracking-tight mb-1">End-to-End</p>
+                    <p class="text-xs font-semibold uppercase tracking-widest text-neutral-400">Marketing Execution</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section-padding about-section">
-        <div class="container">
-            <div class="about-layout">
-                
-                <div class="about-sticky-label reveal">
-                    <span class="hero-tagline">Consultative Creed</span>
-                    <h2>The Maha Manifesto.</h2>
+    <section class="py-24 bg-neutral-950 text-white relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase font-bold tracking-widest text-neutral-500 block mb-3">Industry Realities</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white">Why Most Agencies Fail Businesses</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <p class="text-lg text-neutral-300 leading-relaxed">
+                        Most agencies optimize for retainers. <span class="text-brandBlue font-semibold">I optimize for results.</span>
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed">
+                        Many businesses end up paying monthly fees while receiving reports filled with impressions, clicks, and vanity metrics — but no meaningful business growth.
+                    </p>
+                    <p class="text-neutral-400 leading-relaxed">
+                        Marketing should never be about making dashboards look impressive.
+                    </p>
                 </div>
-                
-                <div class="about-manifesto">
-                    <p class="reveal">
-                        I approach enterprise growth as an engineer approaches fluid distribution systems. Marketing shouldn't be executed as abstract creative experiments; it must function as cold digital infrastructure meant to lock onto market demand.
-                    </p>
-                    <p class="reveal" style="transition-delay: 0.05s;">
-                        For over 6 years, I have systematically worked alongside operations to clear out tracking fluff, structural inefficiencies, and hidden budget bleeds. My explicit mandate is to map out hyper-performing user journeys that reliably secure a return on capital.
-                    </p>
-                    <p class="secondary-text reveal" style="transition-delay: 0.1s;">
-                        I operate transparently as an executive asset, not an order-taker. To guarantee absolute delivery precision, I selectively commit to projects where underlying margins and positioning match realistic paths toward accelerated scale.
+
+                <div class="bg-neutral-900 border border-neutral-800 p-8 rounded space-y-6" data-aos="fade-left">
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-neutral-400 border-b border-neutral-800 pb-4">Marketing Should Be About:</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-brandBlue rounded-full"></div>
+                            <span class="text-base font-medium text-neutral-200">Leads</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-brandBlue rounded-full"></div>
+                            <span class="text-base font-medium text-neutral-200">Revenue</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-brandBlue rounded-full"></div>
+                            <span class="text-base font-medium text-neutral-200">Customer Acquisition</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-brandBlue rounded-full"></div>
+                            <span class="text-base font-medium text-neutral-200">Conversion</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-1.5 h-1.5 bg-brandBlue rounded-full"></div>
+                            <span class="text-base font-medium text-neutral-200">ROI</span>
+                        </div>
+                    </div>
+
+                    <p class="text-xs text-neutral-500 pt-2 italic">
+                        That’s the difference in how I approach client work.
                     </p>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <section id="process" class="section-padding">
-        <div class="container">
-            <div class="section-header reveal text-center" style="margin: 0 auto 5rem auto;">
-                <span class="hero-tagline">Methodology</span>
-                <h2>The Blueprint Execution Framework</h2>
-                <p>An exact sequence engineered to systematically isolate roadblocks, establish assets, and expand distribution lines safely.</p>
+    <section id="different" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-neutral-50 border border-premiumBorder mb-6 shadow-sm" data-aos="zoom-in">
+                <i data-lucide="shield-check" class="w-6 h-6 text-brandBlue"></i>
             </div>
             
-            <div class="process-grid">
-                <div class="process-step reveal">
-                    <span class="step-number">PHASE 01</span>
-                    <h3>Structural Analysis</h3>
-                    <p>An exhaustive calculation covering unit metrics, real client acquisition costs, pipeline cycles, and margin limits.</p>
-                </div>
-                <div class="process-step reveal" style="transition-delay: 0.05s;">
-                    <span class="step-number">PHASE 02</span>
-                    <h3>Architecture Setup</h3>
-                    <p>Assembling custom target funnels and asset playbooks optimized around clear target metrics agreed upon in advance.</p>
-                </div>
-                <div class="process-step reveal" style="transition-delay: 0.1s;">
-                    <span class="step-number">PHASE 03</span>
-                    <h3>System Launch</h3>
-                    <p>Activating traffic assets, tracking arrays, and structural messaging updates directly into the live marketplace.</p>
-                </div>
-                <div class="process-step reveal" style="transition-delay: 0.15s;">
-                    <span class="step-number">PHASE 04</span>
-                    <h3>Data Tuning</h3>
-                    <p>Rigorous, ongoing analytical validation and cross-testing to insulate scale loops against decay.</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-premiumDark mb-6" data-aos="fade-up">What Makes Me Different</h2>
+            
+            <p class="text-base md:text-lg text-premiumMuted leading-relaxed max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="50">
+                I don’t take on every project. I only work with businesses where I’m confident I can provide value and generate measurable results. And I stand behind my work.
+            </p>
+
+            <div class="bg-premiumGray border border-premiumBorder rounded p-8 md:p-12 text-left max-w-2xl mx-auto shadow-[0_4px_20px_rgba(0,0,0,0.01)] relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute top-0 left-0 w-full h-[3px] bg-brandBlue"></div>
+                <span class="text-[10px] uppercase font-extrabold tracking-widest text-neutral-400 border border-premiumBorder bg-white rounded px-2.5 py-1 inline-block mb-4">Risk Mitigation Stack</span>
+                <p class="text-premiumDark font-medium text-base mb-4 leading-relaxed">
+                    If I fail to deliver on the agreed service expectations, <span class="font-bold underline underline-offset-4 decoration-brandBlue">I refund my service fee.</span>
+                </p>
+                <p class="text-xs text-premiumMuted leading-relaxed">
+                    (The ad spend paid to advertising platforms such as Google or Meta is excluded.)
+                </p>
+                <div class="mt-6 pt-4 border-t border-premiumBorder flex items-center gap-2">
+                    <span class="text-xs font-bold text-premiumDark uppercase tracking-wider">That level of accountability is rare in this industry.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="guarantee" class="section-padding" style="padding-bottom: 2rem;">
-        <div class="guarantee-container">
-            <div class="guarantee-box reveal">
-                <span class="hero-tagline" style="color: var(--trust-blue); margin-bottom: 1.5rem;">Performance Safeguard</span>
-                <h2>If the systems built do not reach our agreed benchmarks, I return your consultancy fees.</h2>
-                <p>Elite partnerships demand absolute accountability. Before any execution step is finalized, we build explicit, measurable performance goals together.</p>
-                <p>If those milestones are missed within the targeted calendar roadmap, my service fees are immediately refunded. I choose to anchor my financial incentives directly alongside your bottom line.</p>
-                <p class="disclaimer">* Note: Paid media platform billing allocated directly to Google or Meta is independent and completely non-refundable.</p>
+    <section id="services" class="py-24 border-t border-premiumBorder bg-premiumGray">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase font-bold tracking-widest text-neutral-400 block mb-3">Service Capabilities</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-premiumDark">Services</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="50">
+                
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="target" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Lead Generation</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Build scalable systems that attract qualified customers ready to convert.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Google Ads</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Performance-driven campaigns focused on measurable ROI.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Meta Ads</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Targeted advertising strategies designed to generate demand and conversions.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">LinkedIn Ads</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">B2B-focused advertising campaigns for qualified lead acquisition.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="layout" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Landing Page Development</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">High-converting landing pages optimized for performance.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="code" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Website Development</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Modern, responsive websites designed for trust and conversion.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="sliders" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Conversion Optimization</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Improve conversion rates through strategic optimization.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">E-Commerce Growth</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">End-to-end ecommerce scaling systems and paid acquisition.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="activity" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Tracking & Analytics Setup</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Advanced conversion tracking and performance monitoring systems.</p>
+                </div>
+
+                <div class="bg-white border border-premiumBorder p-8 rounded transition-all duration-300 hover:border-brandBlue group md:col-span-2 lg:col-span-1">
+                    <div class="w-8 h-8 rounded bg-neutral-50 flex items-center justify-center mb-6 border border-premiumBorder group-hover:bg-brandBlue group-hover:text-white transition-all">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-base text-premiumDark mb-2">Brand Consulting</h3>
+                    <p class="text-xs text-premiumMuted leading-relaxed">Positioning, messaging, and strategic growth consulting.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="cta" class="cta-section">
-        <div class="container reveal">
-            <h2>Let's build your growth infrastructure.</h2>
-            <p>Secure an inspection call to locate bottlenecks holding back current volume metrics.</p>
-            <br>
-            <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Secure a Strategy Call</a>
+    <section id="performance" class="py-24 bg-white border-b border-premiumBorder">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase font-bold tracking-widest text-neutral-400 block mb-3">Systems Alignment</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-premiumDark">Built for Performance</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-5 space-y-4" data-aos="fade-right">
+                    <p class="text-base text-premiumMuted leading-relaxed">
+                        My approach is built around performance, systems, and measurable execution. From ad strategy to landing page optimization and conversion tracking, every part of the process is designed to improve business outcomes.
+                    </p>
+                    <div class="p-4 border-l-2 border-brandBlue bg-premiumGray text-xs font-semibold text-premiumDark uppercase tracking-wider">
+                        The goal isn’t to ‘run ads.’ The goal is to create a predictable growth system within the first 90 days.
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 space-y-8 relative before:absolute before:top-2 before:left-4 before:w-[1px] before:h-[85%] before:bg-premiumBorder" data-aos="fade-left">
+                    <div class="relative pl-12">
+                        <div class="absolute top-1 left-2 w-4 h-4 bg-white border-2 border-brandBlue rounded-full flex items-center justify-center">
+                            <span class="w-1.5 h-1.5 bg-brandBlue rounded-full"></span>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-premiumDark mb-1">Phase 1: Architecture & Data Integrity</h4>
+                        <p class="text-xs text-premiumMuted leading-relaxed">Auditing deep server attribution, validating clean payload telemetry, building responsive conversion frameworks, and executing alpha traffic tests.</p>
+                    </div>
+
+                    <div class="relative pl-12">
+                        <div class="absolute top-1 left-2 w-4 h-4 bg-white border-2 border-neutral-400 rounded-full flex items-center justify-center">
+                            <span class="w-1.5 h-1.5 bg-neutral-400 rounded-full"></span>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-premiumDark mb-1">Phase 2: Alpha Scaling Loops</h4>
+                        <p class="text-xs text-premiumMuted leading-relaxed">Deploying optimized multi-channel configurations over targeted intent arrays to maximize baseline user volume while lowering cost per customer acquisition.</p>
+                    </div>
+
+                    <div class="relative pl-12">
+                        <div class="absolute top-1 left-2 w-4 h-4 bg-white border-2 border-neutral-200 rounded-full flex items-center justify-center">
+                            <span class="w-1.5 h-1.5 bg-neutral-200 rounded-full"></span>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-wider text-premiumDark mb-1">Phase 3: Operational System Maturity</h4>
+                        <p class="text-xs text-premiumMuted leading-relaxed">Finalizing automation funnels to lock in reliable, qualified user intake with minimal manual friction and dynamic metric visualization dashboards.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <a href="#" class="footer-logo-link">
-                <img src="logo-buildwithmaha-df9f92.png" alt="BuildWithMaha Logo" style="height: 100%; width: auto;">
-            </a>
-            <div class="footer-links">
-                <a href="https://www.linkedin.com/in/buildwithmaha/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="mailto:hello@buildwithmaha.com">Direct Email</a>
-                <span style="color: var(--text-secondary); font-size: 0.95rem;" id="year"></span>
+    <section class="py-24 bg-premiumGray">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs uppercase font-bold tracking-widest text-neutral-400 block mb-3">Alignment Blueprint</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-premiumDark">Who I Work With</h2>
+            </div>
+
+            <div class="bg-white border border-premiumBorder rounded p-8 md:p-12 space-y-6 shadow-sm" data-aos="fade-up" data-aos-delay="50">
+                <p class="text-base text-premiumMuted leading-relaxed border-b border-premiumBorder pb-4">
+                    I work with businesses that value long-term growth, want measurable results, are serious about scaling, and understand the importance of strategy and execution.
+                </p>
+                <p class="text-sm text-neutral-400 italic">
+                    I avoid projects where expectations are unrealistic or where there’s no clear path to creating impact.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brandBlue shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-premiumDark font-medium">Value long-term growth</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brandBlue shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-premiumDark font-medium">Want measurable results</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brandBlue shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-premiumDark font-medium">Are serious about scaling</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-brandBlue shrink-0 mt-0.5"></i>
+                        <span class="text-sm text-premiumDark font-medium">Understand strategy & execution</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-xs uppercase font-bold tracking-widest text-neutral-400 block mb-3" data-aos="fade-up">Next Actions</span>
+            
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-premiumDark mb-6 max-w-2xl mx-auto leading-tight" data-aos="fade-up" data-aos-delay="50">
+                Let’s Build Something That Actually Performs.
+            </h2>
+            
+            <p class="text-base text-premiumMuted max-w-xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                If you’re looking for growth backed by execution and accountability, let’s talk.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+                <a href="mailto:me@buildwithmaha.online" class="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-neutral-900 hover:bg-neutral-800 text-white font-medium text-xs uppercase tracking-widest rounded transition-all focus:ring-2 focus:ring-brandBlue">
+                    <i data-lucide="mail" class="w-4 h-4"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/buildwithmaha?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-6 py-4 border border-premiumBorder bg-white hover:bg-neutral-50 text-premiumDark font-medium text-xs uppercase tracking-widest rounded transition-all hover:border-brandBlue">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
+                </a>
+                <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full px-6 py-4 border border-neutral-900 bg-white hover:bg-neutral-50 text-premiumDark font-medium text-xs uppercase tracking-widest rounded transition-all hover:bg-brandBlue hover:text-white">
+                    <i data-lucide="calendar" class="w-4 h-4"></i> Calendly Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-white border-t border-premiumBorder text-xs text-premiumMuted">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" alt="BuildWithMaha Logo" class="h-5 w-auto object-contain" onerror="this.style.display='none'">
+                <span class="font-bold text-premiumDark tracking-tight" id="footer-logo-fallback">BuildWithMaha</span>
+                <span>&copy; 2026 Asset Pipeline. All Rights Reserved.</span>
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <a href="#about" class="hover:text-premiumDark transition-colors">Experience</a>
+                <a href="#services" class="hover:text-premiumDark transition-colors">Services</a>
+                <a href="https://www.linkedin.com/in/buildwithmaha?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="hover:text-premiumDark transition-colors flex items-center gap-1">
+                    <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
+                </a>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Automatic Footer Year Tracker
-        document.getElementById('year').textContent = "© " + new Date().getFullYear();
+        // Init Lucide Vectors
+        lucide.createIcons();
 
-        // Responsive Hamburger Nav Architecture
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const navItems = document.querySelectorAll('.nav-links a');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Init Performance Optimized AOS
+        AOS.init({
+            duration: 750,
+            easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+            once: true,
+            offset: 40
         });
 
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        // Mobile Dropdown Controller
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        if(menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
             });
-        });
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
 
-        // Dynamic Navbar Scroll Styling
-        const navbar = document.querySelector('.navbar');
+        // Dynamic Sticky Navigation Transition Matrix
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 40) {
-                navbar.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.03)';
-                navbar.style.padding = '0.75rem 0';
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2.5', 'shadow-[0_4px_24px_rgba(15,23,42,0.015)]');
             } else {
-                navbar.style.boxShadow = 'none';
-                navbar.style.padding = '1rem 0';
+                navbar.classList.remove('py-2.5', 'shadow-[0_4px_24px_rgba(15,23,42,0.015)]');
+                navbar.classList.add('py-4');
             }
         });
-
-        // High-Performance Smooth Intersection Scroll Reveal Engine
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -40px 0px"
-        };
-
-        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
-
-        revealElements.forEach(el => {
-            revealOnScroll.observe(el);
-        });
-        
-        // Initial fallback sweep to activate elements loading inside the initial viewpoint
-        setTimeout(() => {
-            revealElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if(rect.top < window.innerHeight) {
-                    el.classList.add('active');
-                }
-            });
-        }, 150);
     </script>
 </body>
 </html>
