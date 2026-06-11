@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mortgage Broker's Lead Generation Guide | BuildWithMaha</title>
+<meta name="description" content="Why your ad campaigns generate clicks but no appointments, and the three places your money leaks out before anyone books a call. A free guide for mortgage brokers and advisers.">
+
+<meta property="og:title" content="The Mortgage Broker's Lead Generation Guide">
+<meta property="og:description" content="Why your ads generate clicks but no appointments. The three leaks, and how to plug them. Free guide.">
+<meta property="og:image" content="assets/cover.png">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* ----- BuildWithMaha site tokens ----- */
+  --paper:#F6F1E7;        /* cream page */
+  --paper-2:#EFE8D8;      /* deeper section band */
+  --ink:#1B1815;          /* near-black */
+  --ink-soft:#5C564C;     /* muted text */
+  --ink-faint:#938B7E;    /* faint text */
+  --cream:#F6F1E7;        /* text on dark */
+  --blue:#2440EA;         /* electric blue accent */
+  --line:rgba(27,24,21,0.14);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{ font-family:'Hanken Grotesk',sans-serif; color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; line-height:1.62; }
+img{max-width:100%;display:block;}
+a{color:inherit;}
+.wrap{ max-width:1140px; margin:0 auto; padding:0 26px; }
+
+/* labels */
+.label{ font-family:'Hanken Grotesk'; font-weight:700; font-size:0.76rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-soft); display:inline-flex; align-items:center; gap:12px; }
+.label::before{ content:""; width:30px; height:2px; background:var(--blue); display:inline-block; }
+.label.light{ color:rgba(246,241,231,.8); }
+.label.light::before{ background:var(--cream); }
+
+/* headings */
+h1,h2,h3,h4{ font-family:'Fraunces',serif; font-weight:500; color:var(--ink); line-height:1.1; }
+em{ font-family:'Fraunces',serif; font-style:italic; }
+
+/* buttons */
+.btn{ font-family:'Hanken Grotesk'; font-weight:600; font-size:0.95rem; padding:15px 28px;
+  border:1px solid var(--ink); border-radius:6px; background:var(--ink); color:var(--cream);
+  cursor:pointer; text-decoration:none; display:inline-block; transition:transform .35s var(--ease), box-shadow .35s var(--ease);}
+.btn:hover{ box-shadow:6px 6px 0 var(--blue); transform:translate(-1px,-1px);}
+.btn.blue{ background:var(--blue); border-color:var(--blue); color:#fff;}
+.btn.blue:hover{ box-shadow:6px 6px 0 var(--ink);}
+.btn.cream{ background:var(--cream); border-color:var(--cream); color:var(--ink);}
+.btn.cream:hover{ box-shadow:6px 6px 0 var(--blue);}
+
+/* ===== NAV ===== */
+.nav{ border-bottom:1px solid var(--line); background:var(--paper);}
+.nav .wrap{ display:flex; justify-content:space-between; align-items:center; height:70px;}
+.brandmark{ font-family:'Fraunces',serif; font-weight:600; font-size:1.32rem; letter-spacing:-0.01em; color:var(--ink); text-decoration:none;}
+.brandmark em{ color:var(--blue); font-style:italic;}
+.nav-back{ font-family:'Hanken Grotesk'; font-weight:600; font-size:0.86rem; letter-spacing:.02em; color:var(--ink-soft); text-decoration:none;}
+.nav-back:hover{ color:var(--blue);}
+
+/* ===== HERO ===== */
+.hero{ padding:64px 0 84px;}
+.hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;}
+.hero h1{ font-size:clamp(2.2rem,4.6vw,3.5rem); font-weight:600; letter-spacing:-0.02em; margin:22px 0 0; line-height:1.05;}
+.hero h1 em{ color:var(--blue);}
+.hero .sub{ font-size:1.18rem; color:var(--ink-soft); margin-top:20px; max-width:520px; line-height:1.55;}
+
+/* opt-in dark panel */
+.optin{ background:var(--ink); color:var(--cream); border-radius:8px; padding:30px 30px 28px; margin-top:32px; max-width:530px;}
+.optin .ol{ font-family:'Hanken Grotesk'; font-weight:700; font-size:0.74rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(246,241,231,.6);}
+.optin .ot{ font-family:'Fraunces',serif; font-weight:500; font-size:1.42rem; color:var(--cream); margin:10px 0 18px; line-height:1.15;}
+.optin .field{ width:100%; font-family:'Hanken Grotesk'; font-size:1.02rem; color:var(--cream); background:transparent; border:none; border-bottom:1px solid rgba(246,241,231,.32); padding:11px 2px; transition:border-color .3s;}
+.optin .field::placeholder{ color:rgba(246,241,231,.42);}
+.optin .field:focus{ outline:none; border-bottom-color:var(--blue); border-bottom-width:2px;}
+.optin .field.name{ margin-bottom:18px;}
+.optin .row{ display:flex; gap:16px; align-items:flex-end; flex-wrap:wrap;}
+.optin .row .field{ flex:1; min-width:190px;}
+.optin .btn{ white-space:nowrap;}
+.optin .trust{ font-family:'Hanken Grotesk'; font-weight:400; font-size:0.78rem; color:rgba(246,241,231,.5); margin-top:18px; letter-spacing:.01em;}
+.optin .err{ font-family:'Hanken Grotesk'; font-size:0.84rem; color:#ffb1a1; margin-top:14px; display:none;}
+.hp{ position:absolute; left:-9999px; opacity:0; height:0; width:0;}
+
+/* success */
+.success{ display:none;}
+.success.show{ display:block;}
+.optin-form.hide{ display:none;}
+.success .stick{ font-family:'Hanken Grotesk'; font-weight:700; font-size:0.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--blue);}
+.success h3{ font-family:'Fraunces',serif; font-weight:500; font-size:1.5rem; color:var(--cream); margin:9px 0 14px; line-height:1.18;}
+.success p{ font-family:'Hanken Grotesk'; font-size:0.94rem; color:rgba(246,241,231,.7); margin-bottom:18px;}
+
+/* cover shot with hard offset shadow */
+.cover-shot{ position:relative; max-width:380px; margin-left:auto;}
+.cover-shot img{ border:1px solid var(--ink); border-radius:6px; box-shadow:16px 16px 0 var(--blue); transition:box-shadow .4s var(--ease), transform .4s var(--ease);}
+.cover-shot:hover img{ box-shadow:8px 8px 0 var(--blue); transform:translate(4px,4px);}
+.cover-shot .badge{ position:absolute; top:-14px; left:-14px; background:var(--blue); color:#fff; font-family:'Hanken Grotesk'; font-weight:700; font-size:0.72rem; letter-spacing:.1em; text-transform:uppercase; padding:8px 14px; border-radius:100px;}
+
+/* ===== INSIDE ===== */
+.inside{ padding:84px 0; border-top:1px solid var(--line);}
+.inside .head{ max-width:660px;}
+.inside h2{ font-size:clamp(1.9rem,4vw,2.8rem); font-weight:600; margin:16px 0 0; line-height:1.08;}
+.inside .head p{ font-size:1.1rem; color:var(--ink-soft); margin-top:16px;}
+.leak-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:50px;}
+.lc{ border:1px solid var(--ink); border-radius:6px; padding:32px 28px; background:var(--paper);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease);}
+.lc:hover{ transform:translateY(-6px); box-shadow:8px 8px 0 var(--ink);}
+.lc .n{ font-family:'Fraunces',serif; font-weight:600; font-size:3.2rem; line-height:1; color:var(--ink);}
+.lc .n em{ color:var(--blue); font-style:normal;}
+.lc h4{ font-family:'Fraunces',serif; font-weight:500; font-size:1.4rem; margin:18px 0 10px;}
+.lc p{ font-family:'Hanken Grotesk'; font-size:0.98rem; color:var(--ink-soft); line-height:1.55;}
+
+/* ===== BAND ===== */
+.band{ background:var(--paper-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:64px 0;}
+.band .wrap{ display:flex; gap:46px; align-items:center; justify-content:space-between; flex-wrap:wrap;}
+.band .pull{ font-family:'Fraunces',serif; font-style:italic; font-weight:500; font-size:1.55rem; color:var(--ink); line-height:1.4; max-width:660px;}
+.band .pull b{ font-style:normal; color:var(--blue); font-weight:600;}
+
+/* ===== FOOTER ===== */
+.foot{ background:var(--ink); color:rgba(246,241,231,.72); padding:54px 0 46px;}
+.foot .top{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:28px;}
+.foot .fb{ font-family:'Fraunces',serif; font-weight:600; font-size:1.3rem; color:var(--cream); text-decoration:none;}
+.foot .fb em{ color:var(--blue); font-style:italic;}
+.foot .fb .vs{ display:block; font-family:'Hanken Grotesk'; font-weight:500; font-size:0.82rem; color:rgba(246,241,231,.55); margin-top:8px; letter-spacing:.02em;}
+.foot .links{ display:flex; flex-direction:column; gap:12px; font-family:'Hanken Grotesk'; font-weight:500; font-size:0.92rem; text-align:right;}
+.foot .links a{ color:rgba(246,241,231,.72); text-decoration:none;}
+.foot .links a:hover{ color:var(--blue);}
+.foot .tagline{ font-family:'Fraunces',serif; font-style:italic; font-size:0.98rem; color:rgba(246,241,231,.5); border-top:1px solid rgba(246,241,231,.14); padding-top:22px; margin-top:34px;}
+
+/* ===== responsive ===== */
+@media(max-width:880px){
+  .hero-grid{ grid-template-columns:1fr; gap:48px;}
+  .cover-shot{ margin:0 auto; max-width:320px;}
+  .leak-cards{ grid-template-columns:1fr;}
+  .band .pull{ font-size:1.3rem;}
+  .foot .links{ text-align:left;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="/" class="brandmark">Build<em>With</em>Maha</a>
+    <a href="/" class="nav-back">&larr; Back to site</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="label">Free Field Guide</span>
+        <h1>Your ads make clicks.<br>They should be making <em>appointments.</em></h1>
+        <p class="sub">A short, plain guide to the three places your ad budget leaks out before anyone ever books a call, and exactly how to plug each one.</p>
+
+        <div class="optin">
+          <div class="optin-form" id="optinForm">
+            <div class="ol">Get the guide</div>
+            <div class="ot">Where should I send it?</div>
+            <input type="text" id="name" class="field name" placeholder="First name" autocomplete="given-name" required>
+            <div class="row">
+              <input type="email" id="email" class="field" placeholder="you@yourbrokerage.com" autocomplete="email" required>
+              <button class="btn cream" id="submitBtn" type="button">Send me the guide</button>
+            </div>
+            <input type="text" id="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="err" id="err">Please enter a valid email address.</div>
+            <div class="trust">No spam. The guide, then the occasional useful teardown. Unsubscribe anytime.</div>
+          </div>
+
+          <div class="success" id="success">
+            <div class="stick">You're in</div>
+            <h3>Your guide is downloading now.</h3>
+            <p>If it didn't start automatically, grab it here.</p>
+            <a href="mortgage-lead-guide.pdf" class="btn cream" download>&darr; Download the guide (PDF)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-shot">
+        <img src="assets/cover.png" alt="The Mortgage Broker's Lead Generation Guide cover">
+        <div class="badge">10 pages &middot; Free</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== INSIDE ===== -->
+<section class="inside">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">What's Inside</span>
+      <h2>The Three Leaks</h2>
+      <p>Most wasted ad spend drains out of one of these three places. The guide shows you how to find yours and fix it, usually without spending another penny on traffic.</p>
+    </div>
+    <div class="leak-cards">
+      <div class="lc">
+        <div class="n">0<em>1</em></div>
+        <h4>The Click</h4>
+        <p>Your ad pulls in browsers and rate shoppers instead of people who are actually ready to move. Cheap clicks, wrong person.</p>
+      </div>
+      <div class="lc">
+        <div class="n">0<em>2</em></div>
+        <h4>The Page</h4>
+        <p>A ready buyer lands on a page with fifteen things to do and no single reason to book. So they do nothing and leave.</p>
+      </div>
+      <div class="lc">
+        <div class="n">0<em>3</em></div>
+        <h4>The Follow-up</h4>
+        <p>The enquiry comes in, then sits. Nobody reaches the person while they still care, and a warm lead goes cold.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BAND ===== -->
+<section class="band">
+  <div class="wrap">
+    <div class="pull">Same ad spend. Often the same ads. A funnel that finally stops leaking on the way to your calendar. <b>That is the whole guide.</b></div>
+    <a href="#optinForm" class="btn blue" onclick="document.getElementById('name').focus();return false;">Get the free guide</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="top">
+      <a href="/" class="fb">Build<em>With</em>Maha
+        <span class="vs">&larr; Visit the main site</span>
+      </a>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book a call</a>
+        <a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:devminfo98@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="tagline">Ad spend should produce customers, not just clicks.</div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   LEAD CAPTURE  (wired to your Google Form)
+========================================================= */
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScZGpNS2FVOpmqWkqidvJP2BsY5FJ8LahJbIcucCkNf6NwWTg/formResponse";
+const NAME_ENTRY_ID      = "entry.775657463";   // Name
+const EMAIL_ENTRY_ID     = "entry.1887658583";  // Email
+/* ========================================================= */
+
+const nameInput  = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const submitBtn  = document.getElementById('submitBtn');
+const errEl      = document.getElementById('err');
+const formBox    = document.getElementById('optinForm');
+const successBox = document.getElementById('success');
+const honeypot   = document.getElementById('company');
+
+function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+function showErr(msg){ errEl.textContent = msg; errEl.style.display='block'; }
+
+function triggerDownload(){
+  const a = document.createElement('a');
+  a.href = 'mortgage-lead-guide.pdf';
+  a.download = 'The-Mortgage-Brokers-Lead-Generation-Guide.pdf';
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+async function saveLead(name, email){
+  if(!GOOGLE_FORM_ACTION.startsWith('http') || !EMAIL_ENTRY_ID.startsWith('entry.')) return;
+  try{
+    const data = new FormData();
+    if(NAME_ENTRY_ID.startsWith('entry.')) data.append(NAME_ENTRY_ID, name);
+    data.append(EMAIL_ENTRY_ID, email);
+    await fetch(GOOGLE_FORM_ACTION, { method:'POST', mode:'no-cors', body:data });
+  }catch(e){ /* no-cors hides the response; submission still lands */ }
+}
+
+async function handleSubmit(){
+  const name  = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  if(honeypot.value){ return; }
+  if(name.length < 2){ showErr('Please enter your first name.'); nameInput.focus(); return; }
+  if(!validEmail(email)){ showErr('Please enter a valid email address.'); emailInput.focus(); return; }
+  errEl.style.display='none';
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  await saveLead(name, email);
+  formBox.classList.add('hide');
+  successBox.classList.add('show');
+  triggerDownload();
+}
+
+submitBtn.addEventListener('click', handleSubmit);
+nameInput.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); emailInput.focus(); }});
+emailInput.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); handleSubmit(); }});
+</script>
+</body>
+</html>
