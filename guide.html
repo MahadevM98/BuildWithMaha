@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free guide: Why your ads make clicks but no appointments — BuildWithMaha</title>
+<meta name="description" content="A free, plain-English guide for mortgage brokers and advisers: why ad clicks don't become booked appointments, and the three leaks to plug first. Instant download.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .guide-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,80px);align-items:start}
+  .optin{
+    border:1px solid var(--hair-strong);background:#fff;border-radius:18px;
+    padding:clamp(28px,3.4vw,44px);position:sticky;top:110px;
+    box-shadow:0 30px 60px -30px rgba(25,23,19,.22);
+  }
+  .optin .proof-tag{margin-bottom:8px}
+  .optin h3{font-size:1.5rem}
+  .optin .form{gap:20px;margin-top:22px}
+  .optin .fine{font-size:.78rem;color:var(--ink-faint);margin-top:14px}
+  .optin .err{display:none;color:var(--red);font-size:.86rem;font-weight:600;margin-top:-8px}
+  .optin .err.show{display:block}
+  .success{display:none;text-align:left}
+  .success.show{display:block}
+  .optin-form.hide{display:none}
+  .success .big{font-family:'Fraunces',serif;font-size:1.6rem;line-height:1.2;margin-bottom:12px}
+  .toc{border-top:1px solid var(--hair);margin-top:34px}
+  .toc-row{display:grid;grid-template-columns:54px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--hair)}
+  .toc-row .n{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:1.4rem;color:var(--ink-faint)}
+  .toc-row h4{font-size:1.05rem;font-weight:600;margin-bottom:2px}
+  .toc-row p{font-size:.9rem;color:var(--ink-soft)}
+  .honeypot{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+  @media (max-width:980px){
+    .guide-hero{grid-template-columns:1fr}
+    .optin{position:relative;top:0;order:-1}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="/">BuildWith<b>Maha</b></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/landing-pages">Landing Pages</a></li>
+      <li><a href="/pricing">Pricing</a></li>
+      <li><a href="/guide" class="active">Free Guide</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li class="nav-cta"><a class="btn btn-primary" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book a call</a></li>
+    </ul>
+    <button class="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:60px">
+  <div class="wrap">
+    <div class="guide-hero">
+
+      <div>
+        <span class="eyebrow">Free guide · PDF · instant download</span>
+        <h1 class="reveal struck-on-view" style="font-size:clamp(2rem,4.6vw,3.6rem);max-width:22ch">
+          <span class="strike">"We got you 2,000 clicks this month!"</span>
+          <span class="bs-stamp" aria-hidden="true">BS</span>
+          <span class="truth truth-delay serif" style="margin-top:18px">Why your ads make clicks but <em>no appointments.</em></span>
+        </h1>
+        <p class="lead reveal" style="margin-top:24px">The plain-English guide for mortgage brokers and advisers. No theory, no jargon — the exact three leaks that turn ad budgets into noise, and how to plug each one this week.</p>
+
+        <div class="toc reveal">
+          <div class="toc-row"><div class="n">01</div><div><h4>The vanity metrics trap</h4><p>Why clicks and impressions feel like progress and quietly aren't.</p></div></div>
+          <div class="toc-row"><div class="n">02</div><div><h4>Leak one: the click</h4><p>The keyword and negative-list mistakes that buy the wrong visitors.</p></div></div>
+          <div class="toc-row"><div class="n">03</div><div><h4>Leak two: the page</h4><p>Why your homepage kills enquiries, and the six blocks that don't.</p></div></div>
+          <div class="toc-row"><div class="n">04</div><div><h4>Leak three: the follow-up</h4><p>Speed-to-lead: the cheapest fix with the biggest payoff.</p></div></div>
+          <div class="toc-row"><div class="n">05</div><div><h4>The maths to run on your own funnel</h4><p>Four numbers, one line. Know within minutes where you're losing money.</p></div></div>
+        </div>
+      </div>
+
+      <div class="optin reveal">
+        <span class="proof-tag">free, no spam, unsubscribe anytime</span>
+        <h3>Get the guide</h3>
+        <p class="muted" style="font-size:.95rem">Type your name and email, and the PDF downloads instantly.</p>
+
+        <form class="form optin-form" id="optinForm" novalidate>
+          <div class="honeypot" aria-hidden="true">
+            <label for="company">Company</label>
+            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div>
+            <label for="name">First name</label>
+            <input id="name" name="name" type="text" required autocomplete="given-name" placeholder="Sam">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@yourfirm.co.uk">
+          </div>
+          <p class="err" id="err">Please enter your first name and a valid email.</p>
+          <button class="btn btn-primary" type="submit" id="submitBtn" style="width:100%">Send me the guide <span class="arr">→</span></button>
+        </form>
+
+        <div class="success" id="success">
+          <p class="big">It's downloading. <em class="serif" style="color:var(--accent)">Check your downloads folder.</em></p>
+          <p class="muted" style="font-size:.94rem">If it didn't start, <a id="manualDl" href="mortgage-lead-guide.pdf" download style="color:var(--accent-deep);font-weight:600">download it here</a>.</p>
+          <p class="muted" style="font-size:.94rem;margin-top:14px">When you've read it, the natural next step is the free 15-minute teardown of your own funnel.</p>
+          <a class="btn btn-ghost" style="margin-top:16px;width:100%" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book the free teardown</a>
+        </div>
+
+        <p class="fine">Your email goes into my list for occasional broker-marketing notes. One click to leave, no hard feelings.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="wrap reveal">
+    <h2 style="max-width:24ch;margin:0 auto">Prefer the leaks named for <em>your</em> funnel, live?</h2>
+    <p>Skip the reading. Fifteen minutes, your ads and your page on screen, every leak marked up.</p>
+    <a class="btn btn-primary btn-big" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book the free teardown <span class="arr">→</span></a>
+  </div>
+</div>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-tag">
+        <a class="logo" href="/" style="font-size:1.4rem">BuildWith<b>Maha</b></a>
+        <p style="margin-top:12px">Built for enquiries, not vanity metrics. Google Ads, landing pages, and lead systems for finance firms.</p>
+      </div>
+      <div class="ft-cols">
+        <div><h4>Pages</h4><a href="/">Home</a><a href="/services">Services</a><a href="/landing-pages">Landing Pages</a><a href="/pricing">Pricing</a><a href="/guide">Free Guide</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+        <div><h4>Connect</h4><a href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dev@buildwithmaha.com">Email</a></div>
+      </div>
+    </div>
+    <div class="wordmark">BuildWith<b>Maha</b></div>
+    <div class="ft-legal"><span>&copy; <span id="year">2026</span> BuildWithMaha. All rights reserved.</span><span>Mortgage brokers &amp; financial advisers · UK &amp; US</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+(function(){
+  /* live form wiring — already connected to your Google Sheet */
+  const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScZGpNS2FVOpmqWkqidvJP2BsY5FJ8LahJbIcucCkNf6NwWTg/formResponse";
+  const NAME_ENTRY_ID  = "entry.775657463";   // Name
+  const EMAIL_ENTRY_ID = "entry.1887658583";  // Email
+  const PDF_FILE = "mortgage-lead-guide.pdf";
+
+  const form = document.getElementById('optinForm');
+  const err = document.getElementById('err');
+  const success = document.getElementById('success');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const trap = document.getElementById('company').value.trim();
+    const okEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+
+    if (!name || !okEmail) { err.classList.add('show'); return; }
+    err.classList.remove('show');
+
+    if (!trap) { // honeypot empty = human
+      const data = new FormData();
+      data.append(NAME_ENTRY_ID, name);
+      data.append(EMAIL_ENTRY_ID, email);
+      fetch(GOOGLE_FORM_ACTION, { method:'POST', mode:'no-cors', body:data }).catch(function(){});
+    }
+
+    // trigger the download
+    const a = document.createElement('a');
+    a.href = PDF_FILE; a.download = PDF_FILE;
+    document.body.appendChild(a); a.click(); a.remove();
+
+    form.classList.add('hide');
+    success.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
