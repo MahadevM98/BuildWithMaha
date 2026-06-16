@@ -175,14 +175,14 @@
     es.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('struck'); sio.unobserve(e.target); }
     });
-  }, { threshold: 0.4 });
-  const strikeDelay = document.querySelector('.curtain') ? 1300 : 0;
-  setTimeout(() => {
-    document.querySelectorAll('.struck-on-view').forEach(el => {
-      if (reduced) { el.classList.add('struck'); return; }
-      sio.observe(el);
-    });
-  }, strikeDelay);
+  }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.struck-on-view').forEach(el => {
+    if (reduced) { el.classList.add('struck'); return; }
+    sio.observe(el);
+    // safety net: if it's already on-screen at load (above the fold), fire shortly after
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.9) setTimeout(() => el.classList.add('struck'), 900);
+  });
 
   const mio = new IntersectionObserver(es => {
     es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); mio.unobserve(e.target); } });

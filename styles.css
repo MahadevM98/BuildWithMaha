@@ -664,6 +664,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .nav-links.open li:nth-child(7){transition-delay:.35s}
   .nav-links.open li:nth-child(8){transition-delay:.40s}
   .burger.x{background:var(--ink);color:var(--paper)}
+  /* the CTA button keeps its own colours inside the mobile menu */
+  .nav-links .nav-cta a,.nav-links a.btn{color:var(--paper)}
+  .nav-links .nav-cta a:hover,.nav-links a.btn:hover{color:#fff}
+  .nav-links .nav-cta{margin-top:6px}
 }
 
 /* honour reduced motion for all the above */
