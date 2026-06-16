@@ -148,7 +148,18 @@
   /* ---- nav ---- */
   const burger = document.querySelector('.burger');
   const links = document.querySelector('.nav-links');
-  if (burger && links) burger.addEventListener('click', () => links.classList.toggle('open'));
+  if (burger && links) {
+    burger.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      burger.classList.toggle('x', open);
+      burger.textContent = open ? '✕' : '☰';
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // close the menu after tapping a link
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open'); burger.classList.remove('x'); burger.textContent = '☰';
+    }));
+  }
 
   /* ---- sticky mobile CTA ---- */
   const sticky = document.querySelector('.sticky-cta');

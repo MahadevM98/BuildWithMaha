@@ -578,3 +578,96 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .bs-stamp{opacity:1;transform:rotate(-8deg) scale(1);animation:none}
   .circled svg path{stroke-dashoffset:0}
 }
+
+/* ============================================================
+   v5.3 — mobile animation + positioning polish
+   ============================================================ */
+@media (max-width:1279px){
+  /* margin notes become a real annotation card, not loose text */
+  .mnote{
+    position:relative;right:auto;left:auto;top:auto;max-width:none;
+    margin:22px 0 6px;padding:14px 16px 14px 18px;
+    border-left:2px solid var(--pen);background:color-mix(in srgb,var(--pen) 5%,transparent);
+    border-radius:0 12px 12px 0;font-size:1.15rem;line-height:1.35;
+  }
+  .mnote .arrow{display:none}
+  .mnote::before{
+    content:"✎";position:absolute;left:-1px;top:-14px;
+    font-family:'Hanken Grotesk';font-size:.8rem;color:var(--pen);
+    background:var(--paper);padding:0 4px;
+  }
+}
+
+@media (max-width:760px){
+  /* hero: let long struck lines breathe + scale the BS stamp down */
+  .hero h1{font-size:clamp(2rem,8.5vw,2.9rem)!important;line-height:1.12}
+  .hero .truth{font-size:clamp(2.1rem,9vw,3rem)!important}
+  .bs-stamp{font-size:.74rem;padding:5px 11px;border-width:2px}
+
+  /* strikes: thicker line so it reads at small sizes */
+  .strike::after{height:.11em;min-height:3px}
+
+  /* BS/Truth ledger: clearer divide between the two sides on one column */
+  .bst-row{position:relative;padding:34px 0}
+  .bst-row .tr{border-top:1px dashed var(--hair);padding-top:20px}
+
+  /* leak rows: number sits inline, smaller, coloured */
+  .leak-no{font-size:2.4rem}
+  .leak-row{padding:36px 0}
+
+  /* ridge: give the drawn line more height so dips are visible on a narrow screen */
+  .ridge-wrap{margin:34px -8px 6px;overflow:visible}
+  .ridge{min-height:150px}
+
+  /* math ledger: 2x2 grid reads better than a cramped row */
+  .math-board{grid-template-columns:1fr 1fr;gap:24px 18px;padding:34px 0}
+  .math-step{text-align:center}
+
+  /* services rows: tighten the stacked meta blocks */
+  .svc{padding:40px 0}
+  .svc .meta{gap:14px}
+
+  /* guide opt-in: not sticky on mobile (it was already relative), add breathing room */
+  .optin{margin-top:8px}
+
+  /* sticky CTA shouldn't cover the footer legal text */
+  .ft{padding-bottom:96px}
+
+  /* curtain text smaller so it never wraps awkwardly */
+  .curtain .hand{font-size:clamp(1.2rem,5.5vw,1.7rem);padding:0 24px;text-align:center}
+
+  /* reduce parallax drift on mobile (feels jittery on touch scroll) */
+  [data-prlx]{transform:none!important}
+
+  /* tap targets: comfortable min height */
+  .nav-links a,.faq summary{min-height:44px;display:flex;align-items:center}
+  .btn{min-height:48px}
+}
+
+/* mobile nav: animate the dropdown instead of hard show/hide */
+@media (max-width:760px){
+  .nav-links{
+    display:flex!important;
+    max-height:0;overflow:hidden;padding-top:0;padding-bottom:0;
+    transition:max-height .4s var(--ease),padding .4s var(--ease);
+    pointer-events:none;
+  }
+  .nav-links.open{max-height:80vh;padding-top:28px;padding-bottom:28px;pointer-events:auto}
+  .nav-links li{opacity:0;transform:translateX(-12px);transition:opacity .3s,transform .3s}
+  .nav-links.open li{opacity:1;transform:none}
+  .nav-links.open li:nth-child(1){transition-delay:.05s}
+  .nav-links.open li:nth-child(2){transition-delay:.10s}
+  .nav-links.open li:nth-child(3){transition-delay:.15s}
+  .nav-links.open li:nth-child(4){transition-delay:.20s}
+  .nav-links.open li:nth-child(5){transition-delay:.25s}
+  .nav-links.open li:nth-child(6){transition-delay:.30s}
+  .nav-links.open li:nth-child(7){transition-delay:.35s}
+  .nav-links.open li:nth-child(8){transition-delay:.40s}
+  .burger.x{background:var(--ink);color:var(--paper)}
+}
+
+/* honour reduced motion for all the above */
+@media (prefers-reduced-motion:reduce){
+  .nav-links li{opacity:1;transform:none}
+  [data-prlx]{transform:none!important}
+}
