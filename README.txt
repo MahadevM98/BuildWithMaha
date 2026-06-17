@@ -64,3 +64,20 @@ MOBILE POLISH (v5.3)
     and closes itself when you tap a link.
   - Parallax is disabled on touch (it felt jittery); reduced-motion fully
     honoured. Tap targets are >=44px. Tested at 360 / 390 / 768px.
+
+
+BOOKING PAGE (v5.4)  -> lives at /book
+  A dedicated conversion page for traffic you send from LinkedIn. It is NOT
+  the contact form - it is built to turn a warm LinkedIn visitor into a
+  booked call. Includes:
+   - a teardown hero ("Let's hop on a discovery call" struck out -> the real offer)
+   - your Calendly embedded on the page (instant booking, no extra click),
+     themed blue, with a fallback "open in new tab" link
+   - what the 15 minutes covers (the three leaks)
+   - an honest "book if / don't bother if" fit section
+   - a FAQ that kills the 5 reasons people hesitate to book
+   - sticky "Pick my time" button on mobile
+  Upload the whole 'book' folder to your repo root (it contains index.html),
+  so it serves at buildwithmaha.com/book - same trick as /guide.
+  Every "Book a call" link in the site nav + footer now points to /book.
+  Send your LinkedIn profile/post traffic straight to buildwithmaha.com/book.

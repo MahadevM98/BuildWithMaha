@@ -176,12 +176,12 @@
       if (e.isIntersecting) { e.target.classList.add('struck'); sio.unobserve(e.target); }
     });
   }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
-  document.querySelectorAll('.struck-on-view').forEach(el => {
+  document.querySelectorAll('.struck-on-view').forEach((el, idx) => {
     if (reduced) { el.classList.add('struck'); return; }
     sio.observe(el);
-    // safety net: if it's already on-screen at load (above the fold), fire shortly after
+    // the first teardown block on a page is the hero — always play it on load
     const r = el.getBoundingClientRect();
-    if (r.top < window.innerHeight * 0.9) setTimeout(() => el.classList.add('struck'), 900);
+    if (idx === 0 || r.top < window.innerHeight * 1.5) setTimeout(() => el.classList.add('struck'), 700);
   });
 
   const mio = new IntersectionObserver(es => {
