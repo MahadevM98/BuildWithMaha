@@ -1,161 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact — BuildWithMaha</title>
-<meta name="description" content="Book a free 15-minute audit, send a message, or reach out on LinkedIn. Replies within hours, because slow follow-up is leak number three.">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — BuildWithMaha</title><meta name="description" content="Book a free 15-minute teardown, send a message, or reach out on LinkedIn. Replies within hours, because slow follow-up is leak number three.">
+<link rel="stylesheet" href="styles.css"></head><body>
+<nav class="nav">
+  <a class="logo" href="/">BuildWith<b>Maha</b></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/landing-pages">Landing Pages</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/guide">Free Guide</a></li>
+    <li><a href="/about">About</a></li>
+    <li class="nav-cta"><a href="/book">Book a call <span class="m">&rarr;</span></a></li>
+  </ul>
+  <button class="burger" aria-label="Menu">&#9776;</button>
+</nav>
 
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="logo" href="/">BuildWith<b>Maha</b></a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/services">Services</a></li>
-      <li><a href="/landing-pages">Landing Pages</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/guide">Free Guide</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact" class="active">Contact</a></li>
-      <li class="nav-cta"><a class="btn btn-primary" href="/book">Book a call</a></li>
-    </ul>
-    <button class="burger" aria-label="Menu">☰</button>
+<section class="hero" style="padding-bottom:20px"><div class="wrap">
+  <div class="eyebrow">Contact</div>
+  <h1 style="max-width:18ch">Slow follow-up is leak three. <em>Watch me practise what I preach.</em></h1>
+  <p class="lead" style="margin-top:22px">The fastest route is booking the teardown directly. If you'd rather write first, use the form, and expect a reply within hours, not days.</p>
+  <div class="hero-cta"><a class="btn btn-primary btn-big" href="/book">Book the free 15-min teardown <span class="arr">&rarr;</span></a></div>
+</div></section>
+<section style="padding-top:20px"><div class="wrap"><div class="guide-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px);align-items:start">
+  <div>
+    <h2 style="max-width:14ch">Or send a <em>message.</em></h2>
+    <form class="form" id="contactForm" novalidate style="margin-top:24px">
+      <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <div><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div><label for="role">What best describes you?</label><select id="role" name="role"><option>Mortgage broker</option><option>Financial adviser</option><option>Other finance firm</option><option>Something else</option></select></div>
+      <div><label for="message">What's going on with your leads right now?</label><textarea id="message" name="message" placeholder="e.g. Running Google Ads, getting clicks, almost no enquiries." required></textarea></div>
+      <p id="cErr" style="display:none;color:var(--terra);font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace">Please fill in your name, a valid email, and a message.</p>
+      <button class="btn btn-primary" type="submit" id="cSubmit">Send message <span class="arr">&rarr;</span></button>
+    </form>
+    <div id="cSuccess" style="display:none"><p class="serif" style="font-size:22px;font-style:italic">Got it. <em style="color:var(--green)">I reply within hours, not days.</em></p><p class="muted" style="font-size:14.5px;margin-top:8px">Leak three is the follow-up. To skip the inbox entirely:</p><a class="btn btn-ghost" style="margin-top:14px" href="/book">Book the teardown</a></div>
   </div>
-</header>
-
-<section class="hero" style="padding-bottom:30px">
-  <div class="wrap">
-    <span class="eyebrow">Contact</span>
-    <h1 class="kinetic" style="max-width:16ch">Slow follow-up is leak three. <em>Watch me practise what I preach.</em></h1>
-    <p class="lead reveal">The fastest route is booking the audit directly. If you'd rather write first, use the form, and expect a reply within hours, not days.</p>
-    <div class="hero-cta reveal">
-      <a class="btn btn-primary btn-big" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book the free 15-min audit <span class="arr">→</span></a>
-    </div>
+  <div class="steps">
+    <div class="step reveal"><div class="sn">&rarr;</div><div><h3>Fastest: book the teardown</h3><p>Fifteen minutes on your ads and page. You leave with the leaks named, free.</p><a class="btn btn-ghost" style="margin-top:14px" href="/book">Open the calendar</a></div></div>
+    <div class="step reveal"><div class="sn">in</div><div><h3>LinkedIn</h3><p>I write about broker funnels and the lies the ad industry tells. DMs are open.</p><a class="btn btn-ghost" style="margin-top:14px" href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">Visit LinkedIn</a></div></div>
+    <div class="step reveal"><div class="sn">@</div><div><h3>Email</h3><p>For anything longer, attachments, or if forms aren't your thing.</p><a class="btn btn-ghost" style="margin-top:14px" href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a></div></div>
   </div>
-</section>
-
-<section style="padding-top:20px">
-  <div class="wrap">
-    <div class="grid grid-2" style="gap:48px;align-items:start">
-      <div>
-        <h2 class="reveal" style="max-width:16ch">Or send a <em>message.</em></h2>
-        <form class="form" id="contactForm" novalidate>
-          <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
-          </div>
-          <div>
-            <label for="name">Your name</label>
-            <input id="name" name="name" type="text" required autocomplete="name">
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email">
-          </div>
-          <div>
-            <label for="role">What best describes you?</label>
-            <select id="role" name="role">
-              <option>Mortgage broker</option>
-              <option>Financial adviser</option>
-              <option>Other finance firm</option>
-              <option>Something else</option>
-            </select>
-          </div>
-          <div>
-            <label for="message">What's going on with your leads right now?</label>
-            <textarea id="message" name="message" placeholder="e.g. Running Google Ads, getting clicks, almost no enquiries." required></textarea>
-          </div>
-          <p id="cErr" style="display:none;color:#D2402C;font-size:.86rem;font-weight:600;margin-top:-12px">Please fill in your name, a valid email, and a message.</p>
-          <button class="btn btn-primary" type="submit" id="cSubmit">Send message <span class="arr">→</span></button>
-        </form>
-
-        <div id="cSuccess" style="display:none">
-          <p class="serif" style="font-size:1.5rem;line-height:1.3">Got it. <em style="color:var(--accent)">I reply within hours, not days.</em></p>
-          <p class="muted" style="font-size:.95rem;margin-top:10px">Leak three is the follow-up, remember. If you want to skip the inbox entirely:</p>
-          <a class="btn btn-ghost" style="margin-top:16px" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book the 15-min teardown</a>
-        </div>
-      </div>
-      <div class="grid" style="gap:18px">
-        <div class="card reveal">
-          <div class="num">Fastest</div>
-          <h3>Book the audit</h3>
-          <p>Fifteen minutes on your ads and page. You leave with the leaks named, free.</p>
-          <a class="btn btn-ghost" style="margin-top:16px" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Open the calendar</a>
-        </div>
-        <div class="card reveal">
-          <div class="num">LinkedIn</div>
-          <h3>Say hello where I post</h3>
-          <p>I write about broker funnels, page anatomy, and the lies the ad industry tells. DMs are open.</p>
-          <a class="btn btn-ghost" style="margin-top:16px" href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">Visit LinkedIn</a>
-        </div>
-        <div class="card reveal">
-          <div class="num">Email</div>
-          <h3>Old-fashioned works too</h3>
-          <p>For anything longer, attachments, or if forms aren't your thing.</p>
-          <a class="btn btn-ghost" style="margin-top:16px" href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="cta-band">
-  <div class="wrap reveal">
-    <h2>Still scrolling? The leaks <em>aren't fixing themselves.</em></h2>
-    <p>Fifteen minutes is shorter than the time you've spent reading this site. Book it.</p>
-    <a class="btn btn-primary btn-big" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book the free audit <span class="arr">→</span></a>
-    <div class="risk-note">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
-      First lead in 30 days, or the service fee comes back.
-    </div>
-  </div>
-</div>
-
+</div></div></section>
 <footer class="ft">
-  <div class="wrap">
-    <div class="ft-top">
-      <div class="ft-tag">
-        <a class="logo" href="/" style="font-size:1.4rem">BuildWith<b>Maha</b></a>
-        <p style="margin-top:12px">Built for enquiries, not vanity metrics. Google Ads, landing pages, and lead systems for finance firms.</p>
-      </div>
-      <div class="ft-cols">
-        <div><h4>Pages</h4><a href="/">Home</a><a href="/services">Services</a><a href="/landing-pages">Landing Pages</a><a href="/pricing">Pricing</a><a href="/guide">Free Guide</a><a href="/about">About</a><a href="/contact">Contact</a></div>
-        <div><h4>Connect</h4><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dev@buildwithmaha.com">Email</a></div>
-      </div>
-    </div>
-    <div class="wordmark">BuildWith<b>Maha</b></div>
-    <div class="ft-legal"><span>&copy; <span id="year">2026</span> BuildWithMaha. All rights reserved.</span><span>Mortgage brokers &amp; financial advisers · UK &amp; US</span></div>
+  <div class="wrap ft-top">
+    <div class="ft-tag"><div class="logo">BuildWith<b>Maha</b></div><p>Built for enquiries, not vanity metrics. Google Ads, landing pages, and lead systems for finance firms in the UK &amp; US.</p></div>
+    <div><h4>Pages</h4><a href="/">Home</a><a href="/services">Services</a><a href="/landing-pages">Landing Pages</a><a href="/pricing">Pricing</a><a href="/guide">Free Guide</a><a href="/about">About</a><a href="/contact">Contact</a></div>
+    <div><h4>Connect</h4><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a></div>
   </div>
+  <div class="ft-legal"><span>&copy; <span id="year">2026</span> BuildWithMaha</span><span>Mortgage brokers &amp; financial advisers &middot; UK &amp; US</span></div>
 </footer>
-
-<div class="sticky-cta"><a class="btn btn-primary" href="https://calendly.com/devminfo98/15-minute-growth-infrastructure-conversion-audit" target="_blank" rel="noopener">Book a free 15-min audit →</a></div>
-
-<script src="script.js"></script>
+<div class="sticky-cta"><a class="btn btn-primary" href="/book">Book a free 15-min teardown &rarr;</a></div>
 <script>
 (function(){
-  const ACTION = "https://docs.google.com/forms/d/e/1FAIpQLScwaOzRTFxvhYOgWA70_wzuDEd-aih0mwSF2NosqLyLSdyj-Q/formResponse";
-  const E_NAME="entry.1994894809", E_EMAIL="entry.1773480271", E_ROLE="entry.1032883495", E_MSG="entry.123621483";
-  const form=document.getElementById('contactForm'), err=document.getElementById('cErr'), ok=document.getElementById('cSuccess');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name=document.getElementById('name').value.trim();
-    const email=document.getElementById('email').value.trim();
-    const role=document.getElementById('role').value;
-    const msg=document.getElementById('message').value.trim();
-    const trap=document.getElementById('company').value.trim();
-    if(!name || !msg || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){ err.style.display='block'; return; }
+  var ACTION="https://docs.google.com/forms/d/e/1FAIpQLScwaOzRTFxvhYOgWA70_wzuDEd-aih0mwSF2NosqLyLSdyj-Q/formResponse";
+  var E_NAME="entry.1994894809",E_EMAIL="entry.1773480271",E_ROLE="entry.1032883495",E_MSG="entry.123621483";
+  var form=document.getElementById('contactForm'),err=document.getElementById('cErr'),ok=document.getElementById('cSuccess');
+  form.addEventListener('submit',function(e){e.preventDefault();
+    var name=document.getElementById('name').value.trim(),email=document.getElementById('email').value.trim(),role=document.getElementById('role').value,msg=document.getElementById('message').value.trim(),trap=document.getElementById('company').value.trim();
+    if(!name||!msg||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){err.style.display='block';return;}
     err.style.display='none';
-    if(!trap){
-      const d=new FormData();
-      d.append(E_NAME,name); d.append(E_EMAIL,email); d.append(E_ROLE,role); d.append(E_MSG,msg);
-      fetch(ACTION,{method:'POST',mode:'no-cors',body:d}).catch(function(){});
-    }
-    form.style.display='none'; ok.style.display='block';
+    if(!trap){var d=new FormData();d.append(E_NAME,name);d.append(E_EMAIL,email);d.append(E_ROLE,role);d.append(E_MSG,msg);fetch(ACTION,{method:'POST',mode:'no-cors',body:d}).catch(function(){});}
+    form.style.display='none';ok.style.display='block';
   });
 })();
 </script>
+<script src="script.js"></script>
 </body>
 </html>
