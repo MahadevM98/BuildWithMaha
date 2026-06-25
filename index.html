@@ -133,17 +133,27 @@
   <div class="wrap">
     <div class="eyebrow reveal">The maths, in the open</div>
     <h2 class="reveal" style="max-width:16ch">The whole business model on <em>one line.</em></h2>
-    <p class="lead reveal" style="margin-bottom:8px">No agency mystery. Four numbers decide whether your ads make money. I improve each one and show the working.</p>
-    <div class="maths-board reveal">
-      <div class="maths-step"><div class="n"><span data-count="1000">0</span></div><p>Clicks</p></div>
-      <div class="maths-arrow">&rarr;</div>
-      <div class="maths-step"><div class="n"><em><span data-count="100">0</span></em></div><p>Enquiries</p></div>
-      <div class="maths-arrow">&rarr;</div>
-      <div class="maths-step"><div class="n"><span data-count="30">0</span></div><p>Booked calls</p></div>
-      <div class="maths-arrow">&rarr;</div>
-      <div class="maths-step"><div class="n"><em><span data-count="8">0</span></em></div><p>New clients</p></div>
+    <p class="lead reveal" style="margin-bottom:8px">Four numbers decide whether your ads make money. Drag the page conversion rate and watch everything downstream move with it.</p>
+
+    <div class="calc reveal" id="calc">
+      <div class="calc-board">
+        <div class="calc-step"><p>Clicks</p><div class="n" id="cClicks">1,000</div></div>
+        <div class="calc-arrow">&rarr;</div>
+        <div class="calc-step hot"><p>Enquiries</p><div class="n green" id="cEnq">38</div></div>
+        <div class="calc-arrow">&rarr;</div>
+        <div class="calc-step"><p>Booked calls</p><div class="n" id="cCalls">19</div></div>
+        <div class="calc-arrow">&rarr;</div>
+        <div class="calc-step"><p>New clients</p><div class="n" id="cClients">8</div></div>
+      </div>
+      <div class="calc-control">
+        <div class="calc-slider">
+          <div class="calc-slider-head"><span>Page conversion rate</span><span class="green mono" id="cRate">3.8%</span></div>
+          <input type="range" id="cRange" min="1" max="6" step="0.1" value="3.8" aria-label="Page conversion rate">
+          <div class="calc-slider-ends"><span>1% &middot; typical homepage</span><span>6% &middot; dedicated page</span></div>
+        </div>
+        <p class="calc-note">Double the page conversion rate and every number after it doubles too &mdash; <b>with zero extra ad spend.</b> That's why the page usually gets fixed before the budget goes up.</p>
+      </div>
     </div>
-    <p class="muted reveal" style="margin-top:22px;font-size:14.5px;max-width:64ch">Double the page conversion rate and every number after it doubles too, with zero extra ad spend. That's why the page gets fixed before the budget goes up.</p>
   </div>
 </section>
 

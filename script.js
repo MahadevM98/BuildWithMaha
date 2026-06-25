@@ -75,6 +75,38 @@
     }, { passive: true });
   }
 
-  /* year */
+  /* interactive funnel calculator */
+  const calc = document.getElementById('calc');
+  if (calc) {
+    const range = document.getElementById('cRange');
+    const elClicks = document.getElementById('cClicks');
+    const elEnq = document.getElementById('cEnq');
+    const elCalls = document.getElementById('cCalls');
+    const elClients = document.getElementById('cClients');
+    const elRate = document.getElementById('cRate');
+    const CLICKS = 1000;
+    const CALL_RATE = 0.5;   // 50% of enquiries become booked calls
+    const CLOSE_RATE = 0.42; // ~42% of calls become clients
+    const fmt = n => n.toLocaleString('en-US');
+
+    function paint(animated) {
+      const rate = parseFloat(range.value);
+      const enq = Math.round(CLICKS * rate / 100);
+      const calls = Math.round(enq * CALL_RATE);
+      const clients = Math.round(calls * CLOSE_RATE);
+      elRate.textContent = rate.toFixed(1) + '%';
+      elClicks.textContent = fmt(CLICKS);
+      elEnq.textContent = fmt(enq);
+      elCalls.textContent = fmt(calls);
+      elClients.textContent = fmt(clients);
+      // fill the track
+      const pct = ((rate - range.min) / (range.max - range.min)) * 100;
+      range.style.backgroundSize = pct + '% 100%';
+    }
+    range.addEventListener('input', () => paint(false));
+    paint(true);
+  }
+
+
   document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
 })();

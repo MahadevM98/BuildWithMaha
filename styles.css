@@ -384,3 +384,44 @@ section{padding:96px 0}
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{
   outline:2px solid var(--green);outline-offset:3px;border-radius:3px;
 }
+
+/* ============================================================
+   v6.1 — interactive funnel calculator
+   ============================================================ */
+.calc{margin-top:8px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--paper)}
+.calc-board{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+  align-items:center;gap:clamp(6px,1.5vw,20px);padding:34px clamp(20px,3vw,40px) 36px;
+}
+.calc-step{text-align:center;padding:18px 10px;border-radius:12px;transition:background .3s,box-shadow .3s}
+.calc-step.hot{background:rgba(31,138,91,0.07);box-shadow:inset 0 0 0 1px rgba(31,138,91,0.3)}
+.calc-step p{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+.calc-step .n{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:clamp(28px,4vw,46px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+.calc-step .n.green{color:var(--green)}
+.calc-arrow{font-family:'IBM Plex Mono',monospace;color:var(--ink-faint);font-size:18px;text-align:center}
+
+.calc-control{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,48px);align-items:center;
+  padding:26px clamp(20px,3vw,40px);border-top:1px solid var(--line);background:var(--paper-2)}
+.calc-slider-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+.calc-slider-head span:first-child{font-weight:600;font-size:15px}
+.calc-slider-head .green{font-size:18px;font-weight:600}
+.calc-slider-ends{display:flex;justify-content:space-between;margin-top:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint)}
+.calc-note{font-size:14px;color:var(--ink-soft);line-height:1.55}
+.calc-note b{color:var(--green-deep)}
+
+/* range slider, themed */
+#cRange{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;
+  background:linear-gradient(var(--green),var(--green)) no-repeat,var(--line);
+  background-size:56% 100%;outline:none;cursor:pointer}
+#cRange::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--green);border:3px solid var(--paper);box-shadow:0 2px 6px rgba(18,20,26,.25);cursor:grab;transition:transform .15s}
+#cRange::-webkit-slider-thumb:active{cursor:grabbing;transform:scale(1.15)}
+#cRange::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--green);
+  border:3px solid var(--paper);box-shadow:0 2px 6px rgba(18,20,26,.25);cursor:grab}
+
+@media (max-width:760px){
+  .calc-board{grid-template-columns:1fr 1fr;gap:18px}
+  .calc-arrow{display:none}
+  .calc-control{grid-template-columns:1fr;gap:22px}
+}

@@ -2,6 +2,12 @@ BUILDWITHMAHA — SITE v6 "LEDGER"
 ================================
 Redesigned to match your uploaded design reference.
 
+INTERACTIVE CALCULATOR (v6.1)
+  The Maths section now has a working funnel calculator. Drag the page
+  conversion rate slider (1%-6%) and enquiries, booked calls, and new
+  clients recalculate live off 1,000 clicks. Defaults to 3.8% = 38/19/8.
+  It proves the copy: 2% -> 20 enquiries, 4% -> 40. Pure JS, no libraries.
+
 LOOK & FEEL
   - Fonts: Newsreader (serif headlines), IBM Plex Mono (labels/numbers),
     Hanken Grotesk (body). Loaded from Google Fonts.
