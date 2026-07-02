@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | BuildWithMaha</title><meta name="description" content="Book a free 15-minute teardown, send a message, or say hello on LinkedIn. Replies within hours.">
+<title>Write back | BuildWithMaha</title><meta name="description" content="Send a message or book the free teardown. Replies within hours, because slow follow-up is leak three.">
 <link rel="stylesheet" href="styles.css"></head><body>
 <nav class="nav">
   <a class="logo" href="/">BuildWith<b>Maha</b></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="/">The letter</a></li>
     <li><a href="/services">Services</a></li>
-    <li><a href="/landing-pages">Landing Pages</a></li>
-    <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/guide">Free Guide</a></li>
+    <li><a href="/landing-pages">Field notes</a></li>
+    <li><a href="/pricing">Rate card</a></li>
+    <li><a href="/guide">Free guide</a></li>
     <li><a href="/about">About</a></li>
-    <li class="nav-cta"><a href="/book">Book a call &rarr;</a></li>
+    <li class="nav-cta"><a href="/book">Book a call</a></li>
   </ul>
   <button class="burger" aria-label="Menu">&#9776;</button>
 </nav>
-<section class="hero" style="padding-bottom:20px"><div class="wrap">
-  <p class="smallcap">Contact</p>
-  <h1 style="max-width:18ch">Slow follow-up is leak three. <em>Watch me practise what I preach.</em></h1>
-  <p class="lead" style="margin-top:22px">The quickest route is booking the teardown directly. If you'd rather write first, use the form. You'll hear back within hours, because I'd be embarrassed otherwise.</p>
-  <div class="hero-cta"><a class="btn btn-primary btn-big" href="/book">Book the free 15-min teardown <span class="arr">&rarr;</span></a></div>
-</div></section>
-<section style="padding-top:20px"><div class="wrap"><div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,64px);align-items:start" class="contact-cols">
-  <div>
-    <h2 style="max-width:14ch">Or send a <em>message.</em></h2>
-    <form class="form" id="contactForm" novalidate style="margin-top:24px">
-      <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
-      <div><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
-      <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
-      <div><label for="role">What best describes you?</label><select id="role" name="role"><option>Mortgage broker</option><option>Financial adviser</option><option>Other finance firm</option><option>Something else</option></select></div>
-      <div><label for="message">What's going on with your leads right now?</label><textarea id="message" name="message" placeholder="e.g. Running Google Ads, getting clicks, almost no enquiries." required></textarea></div>
-      <p id="cErr" style="display:none;color:var(--terra);font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace">Name, a valid email and a message, please.</p>
-      <button class="btn btn-primary" type="submit" id="cSubmit">Send message <span class="arr">&rarr;</span></button>
-    </form>
-    <div id="cSuccess" style="display:none"><p class="serif" style="font-size:22px;font-style:italic">Got it. <em style="color:var(--green)">You'll hear from me within hours.</em></p><p class="muted" style="font-size:14.5px;margin-top:8px">Or skip the inbox entirely:</p><a class="btn btn-ghost" style="margin-top:14px" href="/book">Book the teardown</a></div>
-  </div>
-  <div class="steps">
-    <div class="step reveal"><div class="sn">&rarr;</div><div><h3>Fastest: book the teardown</h3><p>Fifteen minutes on your ads and page. You leave with the leaks named, free.</p><a class="btn btn-ghost" style="margin-top:14px" href="/book">Open the calendar</a></div></div>
-    <div class="step reveal"><div class="sn">in</div><div><h3>LinkedIn</h3><p>Where I post the BS/Truth series. DMs are open.</p><a class="btn btn-ghost" style="margin-top:14px" href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">Visit LinkedIn</a></div></div>
-    <div class="step reveal"><div class="sn">@</div><div><h3>Email</h3><p>For anything longer, or attachments, or if forms aren't your thing.</p><a class="btn btn-ghost" style="margin-top:14px" href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a></div></div>
-  </div>
-</div></div></section>
-<style>@media (max-width:900px){.contact-cols{grid-template-columns:1fr!important}}</style>
+<main class="sheet">
+<div class="letterhead"><span class="lh-name">BUILDWITH<b>MAHA</b></span><span class="lh-line">Document 7 of 7</span></div>
+<div class="dateline"><span>Write back</span><span>Replies within hours</span></div>
+<h1 class="doc-title">Slow follow-up is leak three. <em>Watch me practise what I preach.</em></h1>
+<p class="doc-sub">The quickest route is booking the teardown directly. If you'd rather write first, the form below reaches me straight away, and you'll hear back within hours because I'd be embarrassed otherwise.</p>
+<p style="margin-bottom:34px"><a class="btn" href="/book">Book the free 15-minute teardown <span class="arr">&rarr;</span></a></p>
+<div class="kicker">Or send a message</div>
+<form class="form" id="contactForm" novalidate>
+  <div style="position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden" aria-hidden="true"><label>Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+  <div><label for="name">Your name</label><input id="name" name="name" type="text" required autocomplete="name"></div>
+  <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+  <div><label for="role">What best describes you?</label><select id="role" name="role"><option>Mortgage broker</option><option>Financial adviser</option><option>Other finance firm</option><option>Something else</option></select></div>
+  <div><label for="message">What's going on with your leads right now?</label><textarea id="message" name="message" placeholder="e.g. Running Google Ads, getting clicks, almost no enquiries." required></textarea></div>
+  <p id="cErr" style="display:none;color:var(--pencil);font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600">Name, a valid email and a message, please.</p>
+  <button class="btn" type="submit" id="cSubmit">Send message <span class="arr">&rarr;</span></button>
+</form>
+<div id="cSuccess" style="display:none">
+  <p style="font-size:22px;font-weight:500">Got it. <span class="hand" style="font-size:1.2em">you'll hear from me within hours.</span></p>
+  <p style="margin-top:14px"><a class="btn btn-ghost" href="/book">Or skip the inbox and book the teardown</a></p>
+</div>
+<div class="kicker" style="margin-top:50px">Other routes</div>
+<p style="font-size:17px">On LinkedIn I post the BS/Truth series and my DMs are open: <a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener" style="color:var(--pen)">linkedin.com/in/buildwithmaha</a>.<br>For anything longer, or attachments: <a href="mailto:dev@buildwithmaha.com" style="color:var(--pen)">dev@buildwithmaha.com</a>.</p>
+</main>
 <footer class="ft">
-  <div class="wrap ft-top">
-    <div class="ft-tag"><div class="logo">BuildWith<b>Maha</b></div><p>Google Ads, landing pages and lead systems for finance firms in the UK and US. Built for enquiries, not vanity metrics.</p></div>
-    <div><h4>Pages</h4><a href="/">Home</a><a href="/services">Services</a><a href="/landing-pages">Landing Pages</a><a href="/pricing">Pricing</a><a href="/guide">Free Guide</a><a href="/about">About</a><a href="/contact">Contact</a></div>
-    <div><h4>Connect</h4><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a></div>
+  <p>This site is one page of an ongoing letter, written and maintained by one person. If something breaks, <a href="mailto:dev@buildwithmaha.com">write to me</a> and I will fix it the same day.</p>
+  <div class="row">
+    <a href="/services">Services</a><a href="/landing-pages">Field notes</a><a href="/pricing">Rate card</a><a href="/guide">Free guide</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <div class="wrap"><p class="ft-note">This site is built and maintained by one person. If something breaks, <a href="mailto:dev@buildwithmaha.com">email me</a> and I'll fix it the same day. That's also roughly how I treat client campaigns.</p></div>
-  <div class="ft-legal"><span>&copy; <span id="year">2026</span> BuildWithMaha</span><span>Last updated June 2026</span></div>
+  <p style="margin-top:14px">&copy; <span id="year">2026</span> BuildWithMaha &middot; Last updated June 2026</p>
 </footer>
-<div class="sticky-cta"><a class="btn btn-primary" href="/book">Book a free 15-min teardown &rarr;</a></div>
+<div class="sticky-cta"><a class="btn" href="/book">Book the free teardown &rarr;</a></div>
 <script>
 (function(){
   var ACTION="https://docs.google.com/forms/d/e/1FAIpQLScwaOzRTFxvhYOgWA70_wzuDEd-aih0mwSF2NosqLyLSdyj-Q/formResponse";

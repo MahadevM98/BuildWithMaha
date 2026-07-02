@@ -1,83 +1,68 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Free guide: Why your ads make clicks but no appointments | BuildWithMaha</title><meta name="description" content="A free plain-English guide for mortgage brokers on why ad clicks never become booked appointments, and the three leaks to plug first.">
+<title>The pamphlet: why your ads make clicks but no appointments | BuildWithMaha</title><meta name="description" content="A free plain-English guide for mortgage brokers on the three leaks that turn ad budgets into noise. Instant PDF download.">
 <link rel="stylesheet" href="styles.css"><style>
-.guide-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,5vw,72px);align-items:start}
-.optin{border:1px solid var(--line-2);background:#fff;border-radius:16px;padding:clamp(26px,3vw,40px);position:sticky;top:90px}
-.optin h3{font-size:22px}
-.optin .form{gap:18px;margin-top:20px}
-.optin .err{display:none;color:var(--terra);font-size:13px;font-weight:600;font-family:'IBM Plex Mono',monospace}
-.optin .err.show{display:block}
+.err{display:none;color:var(--pencil);font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600}
+.err.show{display:block}
 .optin-form.hide{display:none}
 .success{display:none}.success.show{display:block}
-.success .big{font-family:'Newsreader',serif;font-size:22px;line-height:1.25;margin-bottom:10px}
-.toc{border-top:1px solid var(--line);margin-top:30px}
-.toc-row{display:grid;grid-template-columns:50px 1fr;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
-.toc-row .n{font-family:'IBM Plex Mono',monospace;color:var(--green);font-size:15px}
-.toc-row h4{font-size:15.5px;font-weight:600;margin-bottom:2px}
-.toc-row p{font-size:13.5px;color:var(--ink-soft)}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
-@media (max-width:900px){.guide-grid{grid-template-columns:1fr}.optin{position:relative;top:0;order:-1}}
+.toc{border-top:1.5px solid var(--ink);margin:26px 0 34px}
+.toc-row{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.toc-row .n{font-family:'IBM Plex Mono',monospace;color:var(--pencil);font-weight:600;font-size:14px}
+.toc-row h4{font-size:17px;font-weight:600}
+.toc-row p{font-size:15px;color:var(--ink-soft);margin:0}
 </style></head><body>
 <nav class="nav">
   <a class="logo" href="/">BuildWith<b>Maha</b></a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
+    <li><a href="/">The letter</a></li>
     <li><a href="/services">Services</a></li>
-    <li><a href="/landing-pages">Landing Pages</a></li>
-    <li><a href="/pricing">Pricing</a></li>
-    <li><a href="/guide" class="active">Free Guide</a></li>
+    <li><a href="/landing-pages">Field notes</a></li>
+    <li><a href="/pricing">Rate card</a></li>
+    <li><a href="/guide" class="active">Free guide</a></li>
     <li><a href="/about">About</a></li>
-    <li class="nav-cta"><a href="/book">Book a call &rarr;</a></li>
+    <li class="nav-cta"><a href="/book">Book a call</a></li>
   </ul>
   <button class="burger" aria-label="Menu">&#9776;</button>
 </nav>
-<section class="hero" style="padding-bottom:50px"><div class="wrap"><div class="guide-grid">
-  <div>
-    <p class="smallcap">Free guide &middot; PDF &middot; instant download</p>
-    <div class="struck-on-view">
-      <div class="cut-line"><span class="cut-tag">Cut</span><span class="cut-text">"We got you 2,000 clicks this month!"</span></div>
-    </div>
-    <h1 style="font-size:clamp(32px,4.6vw,52px);max-width:18ch;margin-top:18px">Why your ads make clicks but <em>no appointments.</em></h1>
-    <p class="lead" style="margin-top:22px">A short, plain-English guide for mortgage brokers and advisers. It names the three places ad budgets quietly die and shows how to plug each one this week. Takes about ten minutes to read.</p>
-    <div class="toc">
-      <div class="toc-row"><div class="n">01</div><div><h4>The vanity metrics trap</h4><p>Why clicks and impressions feel like progress when they aren't.</p></div></div>
-      <div class="toc-row"><div class="n">02</div><div><h4>Leak one: the click</h4><p>The keyword and negative-list mistakes that buy the wrong visitors.</p></div></div>
-      <div class="toc-row"><div class="n">03</div><div><h4>Leak two: the page</h4><p>Why your homepage kills enquiries, and the six blocks that don't.</p></div></div>
-      <div class="toc-row"><div class="n">04</div><div><h4>Leak three: the follow-up</h4><p>Speed-to-lead, the cheapest fix with the biggest payoff.</p></div></div>
-      <div class="toc-row"><div class="n">05</div><div><h4>The maths for your own funnel</h4><p>Four numbers on one line. You'll know within minutes where money is going.</p></div></div>
-    </div>
-  </div>
-  <div class="optin reveal">
-    <h3>Get the guide</h3>
-    <p class="muted" style="font-size:14.5px;margin-top:4px">Name and email, and the PDF downloads straight away.</p>
-    <form class="form optin-form" id="optinForm" novalidate>
-      <div class="hp" aria-hidden="true"><label>Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
-      <div><label for="name">First name</label><input id="name" name="name" type="text" required autocomplete="given-name" placeholder="Sam"></div>
-      <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@yourfirm.co.uk"></div>
-      <p class="err" id="err">A first name and a valid email, please.</p>
-      <button class="btn btn-primary" type="submit" style="width:100%">Send me the guide <span class="arr">&rarr;</span></button>
-    </form>
-    <div class="success" id="success">
-      <p class="big">It's downloading. <em style="color:var(--green);font-style:italic">Check your downloads folder.</em></p>
-      <p class="muted" style="font-size:14px">If it didn't start, <a href="mortgage-lead-guide.pdf" download style="color:var(--green-deep);font-weight:600">download it here</a>.</p>
-      <a class="btn btn-ghost" style="margin-top:16px;width:100%" href="/book">Book the free teardown</a>
-    </div>
-    <p class="muted" style="font-size:12.5px;margin-top:14px">The odd email about broker marketing, nothing else. One click to leave.</p>
-  </div>
-</div></div></section>
-<div class="cta-band"><div class="wrap reveal"><h2 style="max-width:22ch;margin-left:auto;margin-right:auto">Prefer the leaks named for <em>your</em> funnel, live?</h2><p>Skip the reading. Fifteen minutes with your ads and your page on screen.</p><a class="btn btn-primary btn-big" href="/book">Book the free teardown <span class="arr">&rarr;</span></a></div></div>
+<main class="sheet">
+<div class="letterhead"><span class="lh-name">BUILDWITH<b>MAHA</b></span><span class="lh-line">Document 6 of 7 &middot; free</span></div>
+<div class="dateline"><span>The pamphlet</span><span>PDF &middot; ten minutes to read</span></div>
+<h1 class="doc-title">Why your ads make clicks but <em>no appointments.</em></h1>
+<p class="doc-sub">A short, plain-English guide for brokers and advisers. It names the three places ad budgets quietly die and shows how to plug each one this week. No theory, no jargon.</p>
+<div class="toc">
+  <div class="toc-row"><span class="n">01</span><div><h4>The vanity metrics trap</h4><p>Why clicks and impressions feel like progress when they aren't.</p></div></div>
+  <div class="toc-row"><span class="n">02</span><div><h4>Leak one: the click</h4><p>The keyword and negative-list mistakes that buy the wrong visitors.</p></div></div>
+  <div class="toc-row"><span class="n">03</span><div><h4>Leak two: the page</h4><p>Why your homepage kills enquiries, and the six blocks that don't.</p></div></div>
+  <div class="toc-row"><span class="n">04</span><div><h4>Leak three: the follow-up</h4><p>Speed-to-lead, the cheapest fix with the biggest payoff.</p></div></div>
+  <div class="toc-row"><span class="n">05</span><div><h4>The maths for your own funnel</h4><p>Four numbers on one line. You'll know within minutes where money is going.</p></div></div>
+</div>
+<div class="kicker">Get the guide</div>
+<form class="form optin-form" id="optinForm" novalidate>
+  <div class="hp" aria-hidden="true"><label>Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+  <div><label for="name">First name</label><input id="name" name="name" type="text" required autocomplete="given-name" placeholder="Sam"></div>
+  <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@yourfirm.co.uk"></div>
+  <p class="err" id="err">A first name and a valid email, please.</p>
+  <button class="btn" type="submit">Send me the pamphlet <span class="arr">&rarr;</span></button>
+  <p style="font-size:14px;color:var(--ink-faint);margin:0">The odd letter about broker marketing, nothing else. One click to leave.</p>
+</form>
+<div class="success" id="success">
+  <p style="font-size:22px;font-weight:500">It's downloading. <span class="hand" style="font-size:1.2em">check your downloads folder.</span></p>
+  <p style="font-size:16px;color:var(--ink-soft);margin-top:8px">If it didn't start, <a href="mortgage-lead-guide.pdf" download style="color:var(--pen)">download it here</a>. When you've read it, the natural next step is the free teardown of your own funnel.</p>
+  <p style="margin-top:16px"><a class="btn btn-ghost" href="/book">Book the free teardown</a></p>
+</div>
+<div class="ps"><p style="font-size:16.5px;color:var(--ink-soft)"><span class="pslabel">P.S.</span>Prefer the leaks named for your funnel, live, instead of reading? <a href="/book" style="color:var(--pen)">Skip straight to the teardown.</a></p></div>
+</main>
 <footer class="ft">
-  <div class="wrap ft-top">
-    <div class="ft-tag"><div class="logo">BuildWith<b>Maha</b></div><p>Google Ads, landing pages and lead systems for finance firms in the UK and US. Built for enquiries, not vanity metrics.</p></div>
-    <div><h4>Pages</h4><a href="/">Home</a><a href="/services">Services</a><a href="/landing-pages">Landing Pages</a><a href="/pricing">Pricing</a><a href="/guide">Free Guide</a><a href="/about">About</a><a href="/contact">Contact</a></div>
-    <div><h4>Connect</h4><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:dev@buildwithmaha.com">dev@buildwithmaha.com</a></div>
+  <p>This site is one page of an ongoing letter, written and maintained by one person. If something breaks, <a href="mailto:dev@buildwithmaha.com">write to me</a> and I will fix it the same day.</p>
+  <div class="row">
+    <a href="/services">Services</a><a href="/landing-pages">Field notes</a><a href="/pricing">Rate card</a><a href="/guide">Free guide</a><a href="/about">About</a><a href="/contact">Contact</a><a href="/book">Book a call</a><a href="https://www.linkedin.com/in/buildwithmaha" target="_blank" rel="noopener">LinkedIn</a>
   </div>
-  <div class="wrap"><p class="ft-note">This site is built and maintained by one person. If something breaks, <a href="mailto:dev@buildwithmaha.com">email me</a> and I'll fix it the same day. That's also roughly how I treat client campaigns.</p></div>
-  <div class="ft-legal"><span>&copy; <span id="year">2026</span> BuildWithMaha</span><span>Last updated June 2026</span></div>
+  <p style="margin-top:14px">&copy; <span id="year">2026</span> BuildWithMaha &middot; Last updated June 2026</p>
 </footer>
-<div class="sticky-cta"><a class="btn btn-primary" href="/book">Book a free 15-min teardown &rarr;</a></div>
+<div class="sticky-cta"><a class="btn" href="/book">Book the free teardown &rarr;</a></div>
 <script>
 (function(){
   var ACTION="https://docs.google.com/forms/d/e/1FAIpQLScZGpNS2FVOpmqWkqidvJP2BsY5FJ8LahJbIcucCkNf6NwWTg/formResponse";
