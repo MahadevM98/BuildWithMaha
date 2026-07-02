@@ -1,49 +1,42 @@
-BUILDWITHMAHA — SITE v6 "LEDGER"
-================================
-Redesigned to match your uploaded design reference.
+BUILDWITHMAHA | SITE v6.2 "LEDGER, HUMANISED"
+=============================================
 
-INTERACTIVE CALCULATOR (v6.1)
-  The Maths section now has a working funnel calculator. Drag the page
-  conversion rate slider (1%-6%) and enquiries, booked calls, and new
-  clients recalculate live off 1,000 clicks. Defaults to 3.8% = 38/19/8.
-  It proves the copy: 2% -> 20 enquiries, 4% -> 40. Pure JS, no libraries.
+WHAT CHANGED IN THIS PASS (the de-AI edit)
+  Copy:
+   - Zero em-dashes anywhere, including page titles. Your rule, applied.
+   - Rhythmic triads and seesaw sentences rewritten in plain speech.
+     e.g. the old "No pitch deck. No pressure. Just the leaks, named."
+     is now "No pitch deck. You get a straight list of what's broken."
+   - Sentence lengths vary. More first person. British English.
+   - Small honest touches: "This occasionally costs me money.",
+     "I'd be embarrassed otherwise.", "Please don't tidy it first."
+  Design:
+   - The "//" mono kickers are gone. The status-dot pill is gone.
+   - Tick-up counters removed; stats read as editorial numbers now.
+   - Section openers vary (some have the ruled label, some a plain
+     small-caps line, some none) so pages no longer repeat one rhythm.
+   - The Cut tag sits at a slight hand-placed angle.
+   - A hand-drawn green underline draws itself under "booked enquiries".
+   - Footer has a human note: "built and maintained by one person, if
+     something breaks email me" plus "Last updated June 2026".
 
-LOOK & FEEL
-  - Fonts: Newsreader (serif headlines), IBM Plex Mono (labels/numbers),
-    Hanken Grotesk (body). Loaded from Google Fonts.
-  - Palette: warm paper #F6F5F1, near-black #12141A, GREEN accent #1f8a5b,
-    terracotta #c2533b for the "Cut" strike. (The old blue is gone.)
-  - Signature animations: the terracotta strike on the hero "Cut" line,
-    the self-drawing green/terracotta funnel chart with the three leak dips,
-    mono counters that tick up, and the italic ticker.
+EVERYTHING ELSE (unchanged and tested)
+   - Ledger design: Newsreader / IBM Plex Mono / Hanken Grotesk,
+     green #1f8a5b, terracotta cut #c2533b, warm paper.
+   - Interactive funnel calculator (drag 1%-6%, numbers recalc live).
+   - Self-drawing funnel chart with the three leak dips.
+   - The Cut strike animation on hero lines.
+   - GUIDE form: live Google Form (name+email) + PDF download + honeypot.
+   - CONTACT form: live Google Form (name, email, role, message) + honeypot.
+   - BOOK page: Calendly embedded, themed green.
+   - Clean URLs (/services, /book etc). Links start with "/" so preview
+     on the LIVE domain, not by double-clicking files.
 
-PAGES (all rebuilt in the new style)
-  /            index.html          home: hero + cut, stat strip, ticker,
-                                    BS/Truth, three leaks + funnel chart,
-                                    the maths, what I build, how it works, FAQ, CTA
-  /services    services.html       seven services as a numbered ledger
-  /landing-pages landing-pages.html the six-block page anatomy
-  /pricing     pricing.html        three tiers + 30-day guarantee
-  /guide       guide.html          lead magnet opt-in (LIVE Google Form + PDF)
-  /about       about.html          background + the three rules
-  /contact     contact.html        message form (LIVE Google Form)
-  /book        book/index.html     LinkedIn -> booking page w/ Calendly embed
+DEPLOY
+   Upload all files + the book folder to the repo root. Keep
+   mortgage-lead-guide.pdf in the root. Done.
 
-FORMS — already wired to your live Google Forms and tested:
-  guide.html   -> guide signups (name + email) + triggers PDF download
-  contact.html -> contact form (name, email, role, message)
-  Both have a honeypot that silently drops bots.
-
-BEFORE GOING LIVE
-  - Put mortgage-lead-guide.pdf in the repo ROOT (next to guide.html) so the
-    guide download works.
-  - That's it. Calendly, LinkedIn, and dev@buildwithmaha.com are all set.
-
-DEPLOY (GitHub Pages, same as before)
-  Upload every file + the 'book' folder to the repo root. Clean URLs
-  (/services, /book, etc.) work automatically on your custom domain.
-  Links start with "/" so test on the LIVE site, not by double-clicking files.
-
-MOBILE
-  Tested 320-768px: no overflow, animated mobile menu, sticky book button,
-  calendar fits its card, all strikes/chart/counters fire. Reduced-motion honoured.
+TESTED
+   All 8 pages, 1280px and 390px: no overflow. Strike, hand underline,
+   chart draw, calculator, both forms, honeypots: all verified in a
+   real browser before packaging.
