@@ -45,9 +45,13 @@
       const calls = Math.round(enq * CALL_RATE);
       const clients = Math.round(calls * CLOSE_RATE);
       elRate.textContent = rate.toFixed(1) + '%';
-      elEnq.textContent = enq.toLocaleString('en-GB');
-      elCalls.textContent = calls.toLocaleString('en-GB');
-      elClients.textContent = clients.toLocaleString('en-GB');
+      [[elEnq, enq], [elCalls, calls], [elClients, clients]].forEach(([el, v]) => {
+        const t = v.toLocaleString('en-GB');
+        if (el.textContent !== t) {
+          el.textContent = t;
+          el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+        }
+      });
       const pct = ((rate - range.min) / (range.max - range.min)) * 100;
       range.style.backgroundSize = pct + '% 100%';
     }
@@ -74,6 +78,45 @@
       sticky.classList.toggle('show', window.scrollY > window.innerHeight * 0.85);
     }, { passive: true });
   }
+
+
+  /* reading progress hairline */
+  const prog = document.createElement('div');
+  prog.className = 'progress';
+  document.body.appendChild(prog);
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  /* heading wipe: wrap h1/h2.reveal contents in a masked span */
+  document.querySelectorAll('h1.reveal, h2.reveal').forEach(h => {
+    if (h.querySelector('.wipe')) return;
+    const w = document.createElement('span');
+    w.className = 'wipe';
+    while (h.firstChild) w.appendChild(h.firstChild);
+    h.appendChild(w);
+  });
+
+  /* FAQ: wrap answers so the grid-rows open animation works */
+  document.querySelectorAll('.faq .a').forEach(a => {
+    if (!a.querySelector('.aw')) {
+      const w = document.createElement('div');
+      w.className = 'aw';
+      while (a.firstChild) w.appendChild(a.firstChild);
+      a.appendChild(w);
+    }
+  });
+
+  /* stat numbers: ensure inner span exists for the mask rise */
+  document.querySelectorAll('.stat .n').forEach(n => {
+    if (!n.children.length) {
+      const s = document.createElement('span');
+      s.textContent = n.textContent;
+      n.textContent = '';
+      n.appendChild(s);
+    }
+  });
 
   document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
 })();

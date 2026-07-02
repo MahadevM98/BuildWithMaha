@@ -40,3 +40,17 @@ TESTED
    All 8 pages, 1280px and 390px: no overflow. Strike, hand underline,
    chart draw, calculator, both forms, honeypots: all verified in a
    real browser before packaging.
+v6.3 MOTION LAYER (added on top of the humanised site)
+  - Reading-progress hairline: a 2px green line along the very top that
+    fills as you read. Subtle, editorial.
+  - Headline wipes: h2s rise out of a mask as they enter view.
+  - Button ink sweep: hovers now sweep green (primary) or ink (ghost)
+    from the left instead of flat colour swaps.
+  - Nav links: green underline sweeps in from the left on hover.
+  - The Cut tag stamps in (scale-down thump) when its strike fires.
+  - Chart: the green "Calls" end dot pulses gently after the line draws.
+  - Calculator: numbers do a tiny pop each time the slider changes them.
+  - FAQ: answers now slide open smoothly instead of snapping.
+  - Stat numbers rise out of a mask, staggered left to right.
+  - Leak "fix" lines slide in when their row lights up.
+  All of it respects prefers-reduced-motion and was tested on mobile.

@@ -312,3 +312,82 @@ section{padding:96px 0}
   html{scroll-behavior:auto}
 }
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:3px}
+
+/* ============================================================
+   v6.3 — motion layer
+   ============================================================ */
+
+/* reading progress hairline */
+.progress{position:fixed;top:0;left:0;height:2px;background:var(--green);width:0;z-index:100;transition:width .1s linear}
+
+/* headline wipe reveal: mask an inner span so the heading box stays observable */
+h1.reveal,h2.reveal{opacity:1;transform:none;overflow:hidden;padding-bottom:.1em;margin-bottom:calc(16px - .1em)}
+h1.reveal .wipe,h2.reveal .wipe{display:block;transform:translateY(105%);transition:transform .9s var(--ease)}
+h1.reveal.in .wipe,h2.reveal.in .wipe{transform:none}
+
+/* button ink sweep */
+.btn{position:relative;overflow:hidden;z-index:0}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:999px;transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.btn-primary::before{background:var(--green)}
+.btn-primary:hover{background:var(--ink);border-color:var(--green)}
+.btn-primary:hover::before{transform:scaleX(1)}
+.btn-ghost::before{background:var(--ink)}
+.btn-ghost:hover{background:transparent;color:var(--paper)}
+.btn-ghost:hover::before{transform:scaleX(1)}
+.cta-band .btn-primary::before{background:var(--green)}
+.cta-band .btn-primary:hover{background:var(--paper);color:#fff;border-color:var(--green)}
+
+/* nav link underline sweep */
+.nav-links a:not(.nav-cta a){position:relative}
+.nav-links li:not(.nav-cta) a::after{content:"";position:absolute;left:0;bottom:-3px;height:1.5px;width:100%;background:var(--green);transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease)}
+.nav-links li:not(.nav-cta) a:hover::after,.nav-links li:not(.nav-cta) a.active::after{transform:scaleX(1);transform-origin:left}
+
+/* cut tag stamps in when the strike fires */
+.cut-tag{opacity:0;transform:rotate(-2deg) scale(1.6)}
+.struck .cut-tag{animation:bwm-stamp .38s cubic-bezier(.5,1.6,.4,1) .1s forwards}
+@keyframes bwm-stamp{0%{opacity:0;transform:rotate(-2deg) scale(1.6)}70%{opacity:1;transform:rotate(-2deg) scale(.95)}100%{opacity:1;transform:rotate(-2deg) scale(1)}}
+
+/* chart: green end dot pulses once drawn */
+.chart.in circle[fill="#1f8a5b"]{animation:bwm-pulse 2s ease-in-out 2.5s infinite}
+@keyframes bwm-pulse{0%,100%{opacity:1}50%{opacity:.45}}
+
+/* calculator: numbers pop when they change */
+.calc-step .n.tick{animation:bwm-tick .3s var(--ease)}
+@keyframes bwm-tick{0%{transform:translateY(6px);opacity:.4}100%{transform:none;opacity:1}}
+
+/* FAQ smooth open (inner wrapper added by JS) */
+.faq .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease);padding-bottom:0}
+.faq details[open] .a{grid-template-rows:1fr;padding-bottom:26px}
+.faq .a>.aw{overflow:hidden}
+.faq summary{transition:color .2s,padding-left .3s var(--ease)}
+.faq details[open] summary{color:var(--green)}
+
+/* stat numbers rise inside a mask */
+.stat .n{display:block;overflow:hidden}
+.stat .n>span,.stat .n>em{display:inline-block;transform:translateY(110%);transition:transform .8s var(--ease)}
+.stats.in .stat:nth-child(1) .n>*{transition-delay:.1s}
+.stats.in .stat:nth-child(2) .n>*{transition-delay:.22s}
+.stats.in .stat:nth-child(3) .n>*{transition-delay:.34s}
+.stats.in .stat .n>*{transform:none}
+
+/* build cards: label arrow nudge + lift */
+.build-card{transition:background .3s,transform .35s var(--ease)}
+.build-card:hover{transform:translateY(-4px)}
+
+/* leak fix line slides in when lit */
+.leak-row .fix{opacity:0;transform:translateX(-8px);transition:opacity .5s var(--ease) .2s,transform .5s var(--ease) .2s}
+.leak-row.lit .fix{opacity:1;transform:none}
+
+/* ticker: slight speed-up feel via duplicated content already; keep */
+
+@media (prefers-reduced-motion:reduce){
+  .progress{display:none}
+  h1.reveal .wipe,h2.reveal .wipe{transform:none}
+  .btn::before{display:none}
+  .cut-tag{opacity:1;transform:rotate(-2deg);animation:none!important}
+  .chart.in circle[fill="#1f8a5b"]{animation:none}
+  .calc-step .n.tick{animation:none}
+  .faq .a{grid-template-rows:1fr;padding-bottom:26px}
+  .stat .n>span,.stat .n>em{transform:none}
+  .leak-row .fix{opacity:1;transform:none}
+}
